@@ -1,0 +1,62 @@
+[
+    {
+        "notification_title_text": "Harry Potter accepted your request",
+        "notification_content_text": "Harry Potter has accepted your friend request. Click here to see his profile in your team.",
+        "notification_is_read": false,
+        "notification_link_text": "View profile"
+    },
+    {
+        "notification_title_text": "Hermione Granger sent an offer of 300 Galleons",
+        "notification_content_text": "Hermione Granger sent an offer for the contract #343334. Click here to review.",
+        "notification_is_read": false,
+        "notification_link_text": "View offer"
+    },
+    {
+        "notification_title_text": "Ron Weasley sent a message",
+        "notification_content_text": "Hey, are you free tomorrow for a game of Quidditch?",
+        "notification_is_read": false,
+        "notification_link_text": "View message"
+    },
+    {
+        "notification_title_text": "Albus Dumbledore liked your post",
+        "notification_content_text": "Albus Dumbledore liked your recent post. Click here to view the post.",
+        "notification_is_read": true,
+        "notification_link_text": "View post"
+    },
+    {
+        "notification_title_text": "Severus Snape commented on your photo",
+        "notification_content_text": "Severus Snape commented: 'Interesting potion ingredients.' Click here to see the comment.",
+        "notification_is_read": true,
+        "notification_link_text": "View comment"
+    },
+    {
+        "notification_title_text": "Luna Lovegood sent a friend request",
+        "notification_content_text": "Luna Lovegood has sent you a friend request. Click here to view her profile.",
+        "notification_is_read": true,
+        "notification_link_text": "View profile"
+    },
+    {
+        "notification_title_text": "Draco Malfoy shared a post",
+        "notification_content_text": "Draco Malfoy shared a post in your group. Click here to view the post.",
+        "notification_is_read": true,
+        "notification_link_text": "View post"
+    },
+    {
+        "notification_title_text": "Hagrid mentioned you in a comment",
+        "notification_content_text": "Hagrid mentioned you in a comment: 'Check out this magical creature!' Click here to see the comment.",
+        "notification_is_read": true,
+        "notification_link_text": "View comment"
+    },
+    {
+        "notification_title_text": "Ginny Weasley sent you a gift",
+        "notification_content_text": "Ginny Weasley sent you a virtual gift. Click here to view it.",
+        "notification_is_read": true,
+        "notification_link_text": "View gift"
+    },
+    {
+        "notification_title_text": "Neville Longbottom invited you to an event",
+        "notification_content_text": "Neville Longbottom invited you to 'Herbology Workshop'. Click here to RSVP.",
+        "notification_is_read": true,
+        "notification_link_text": "View event"
+    }
+]

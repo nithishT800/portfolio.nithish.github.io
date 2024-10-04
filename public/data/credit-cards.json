@@ -1,0 +1,53 @@
+[
+    {
+      "brand": "Visa",
+      "card_number": "4111111111111111",
+      "card_number_text": "4111 1111 1111 1111",
+      "expiry_month": "12",
+      "expiry_year": "25",
+      "expiry_year_month": "12/25",
+      "card_holder_name": "John Doe",
+      "cvv": "123"
+    },
+    {
+      "brand": "MasterCard",
+      "card_number": "5555555555554444",
+      "card_number_text": "5555 5555 5555 4444",
+      "expiry_month": "11",
+      "expiry_year": "24",
+      "expiry_year_month": "11/24",
+      "card_holder_name": "Jane Smith",
+      "cvv": "456"
+    },
+    {
+      "brand": "American Express",
+      "card_number": "378282246310005",
+      "card_number_text": "3782 822463 10005",
+      "expiry_month": "10",
+      "expiry_year": "26",
+      "expiry_year_month": "10/26",
+      "card_holder_name": "Alice Johnson",
+      "cvv": "789"
+    },
+    {
+      "brand": "Discover",
+      "card_number": "6011111111111117",
+      "card_number_text": "6011 1111 1111 1117",
+      "expiry_month": "09",
+      "expiry_year": "29",
+      "expiry_year_month": "09/29",
+      "card_holder_name": "Bob Brown",
+      "cvv": "012"
+    },
+    {
+      "brand": "JCB",
+      "card_number": "3530111333300000",
+      "card_number_text": "3530 1113 3330 0000",
+      "expiry_month": "08",
+      "expiry_year": "27",
+      "expiry_year_month": "08/27",
+      "card_holder_name": "Charlie Davis",
+      "cvv": "345"
+    }
+  ]
+  

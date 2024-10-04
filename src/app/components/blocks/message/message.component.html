@@ -1,0 +1,57 @@
+<!-- <h2 mat-dialog-title></h2> -->
+    @switch (key) {
+        @case('project_created'){
+            
+        }
+        @case('project_form_has_error'){
+            <h2 mat-dialog-title>Error</h2>
+        }
+        @case('project_post_success'){
+            <h2 mat-dialog-title>Success</h2>
+        }
+    }
+<mat-dialog-content>
+    @switch (key) {
+        @case('project_created'){
+            <div class="flex justify-content-center align-items-center gap-2">
+                <div>Please wait</div>
+                <div><mat-spinner color="accent" diameter="20" strokeWidth="3"></mat-spinner></div>
+            </div>
+        }
+        @case('project_form_has_error'){
+            <div class="flex flex-column justify-content-center align-items-center gap-2">
+                <div><lottie-animations context_key="error_project_post"></lottie-animations></div>
+                <div class="flex justify-content-center align-items-center gap-2">
+                    <div>There are errors in the form, Please enter all required detail.</div>
+                </div>
+            </div>
+        }
+        @case('project_post_success'){
+            <div class="flex flex-column justify-content-center align-items-center gap-2">
+                <div><lottie-animations context_key="success_project_post"></lottie-animations></div>
+                <div class="flex justify-content-center align-items-center gap-2">
+                    <button mat-button  (click)="closeDialog()">
+                        <div class="flex justify-content-center align-items-center gap-1">
+                            <span>View project </span>
+                            <mat-icon>arrow_outward</mat-icon>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        }
+    }
+</mat-dialog-content>
+
+    @switch (key) {
+        @case('project_created'){
+            
+        }
+        @case('project_form_has_error'){
+            <mat-dialog-actions>
+                <button mat-button color="warn" (click)="closeDialog()">Close</button>
+            </mat-dialog-actions>
+        }
+        @case('project_post_success'){
+            
+        }
+    }

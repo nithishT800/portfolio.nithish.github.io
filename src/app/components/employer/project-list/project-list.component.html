@@ -1,0 +1,77 @@
+<!-- <h3>Projects</h3> -->
+<div class="mat-headline-medium">Projects</div>
+<div class="grid">
+    <div class="hidden md:block col-3">
+        <mat-card appearance="outlined">
+            <mat-card-content>
+                <mat-nav-list>
+                    @for (link of project_nav_links; track link) {
+                      <a mat-list-item [routerLink]="['/employer/projects', link.routerLink]" routerLinkActive="mdc-list-item--activated">{{ link.label }}</a>
+                    }
+                </mat-nav-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-12 md:col-6">
+        <!-- <div class="flex flex-column gap-3">
+            @for(item of items; track item){
+                <mat-card appearance="outlined">
+                    <mat-card-content>
+                        {{item}}
+                    </mat-card-content>
+                </mat-card>
+            }
+        </div> -->
+        <cdk-virtual-scroll-viewport itemSize="1" class="example-viewport">
+            <div class="flex flex-column gap-3">
+                <div *cdkVirtualFor="let project of project_list" >
+                    <mat-card appearance="outlined">
+                        <mat-card-content>
+                            <div class="flex flex-column gap-1">
+                                <div class="flex gap-2 align-items-center">
+                                    <div class="mat-title-large">{{project.project_name}}</div>
+                                    <div><status-tag [status]="project.project_status" [text]="project.project_status_text"></status-tag></div>
+                                    <button mat-icon-button><mat-icon>more_vert</mat-icon></button>
+                                </div>
+                                <div class="mat-body-medium">{{project.project_dates}}</div>
+                                <div class="flex justify-content-between">
+                                    <div class="flex flex-column align-items-center">
+                                        <div class="mat-body-medium">#{{project.project_number}}</div>
+                                        <div class="mat-label-large">Number</div>
+                                    </div>
+                                    <div class="flex flex-column align-items-center">
+                                        <div class="mat-body-medium">{{project.project_rate}}</div>
+                                        <div class="mat-label-large">Rate</div>
+                                    </div>
+                                    <div class="flex flex-column align-items-center">
+                                        <div class="mat-body-medium">{{(project.project_offer_count) ? project.project_offer_count : project.project_total_days }}</div>
+                                        <div class="mat-label-large">{{(project.project_offer_count) ? 'Offers' : 'Total Days' }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </cdk-virtual-scroll-viewport>
+        <div class="py-3">
+            <mat-paginator [length]="items.length"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+              
+            </mat-paginator>
+        </div>
+    </div>
+    <div class="hidden md:block col-3">
+        <mat-card appearance="outlined">
+            <mat-card-content>
+                <mat-nav-list>
+                    @for (link of project_nav_links; track link) {
+                      <a mat-list-item [routerLink]="['/employer/projects', link.routerLink]" routerLinkActive="mdc-list-item--activated">{{ link.label }}</a>
+                    }
+                  </mat-nav-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

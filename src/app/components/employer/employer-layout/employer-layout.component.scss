@@ -1,0 +1,67 @@
+.nav-bar{
+    box-shadow: var(--mat-app-elevation-shadow-level-1);
+    margin-bottom: 1.5rem !important;
+}
+
+.nav-bar-container{
+    contain: layout;
+    //pointer-events: none;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: block;
+    z-index: 1006;
+}
+
+.active-nav-link{
+    background-color: #dae2f9 !important;
+}
+
+/* For screens smaller than 600px */
+@media (max-width: 599.98px) {
+    .employer-layout-main {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 4rem;
+    }
+}
+
+/* For screens between 600px and 959.98px */
+@media (min-width: 600px) and (max-width: 959.98px) {
+    .employer-layout-main {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 4rem;
+    }
+}
+
+/* For screens between 960px and 1279.98px */
+@media (min-width: 960px) and (max-width: 1279.98px) {
+    .employer-layout-main {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 4rem;
+    }
+}
+
+/* For screens between 1280px and 1919.98px in landscape orientation */
+@media (min-width: 1280px) and (max-width: 1919.98px) and (orientation: landscape) {
+    .employer-layout-main {
+        padding-left: 14rem !important;
+        padding-right: 14rem !important;
+        padding-top: 4rem;
+    }
+}
+
+/* For screens larger than 1920px in landscape orientation */
+@media (min-width: 1920px) and (orientation: landscape) {
+    .employer-layout-main {
+        padding-left: 16rem !important;
+        padding-right: 16rem !important;
+        padding-top: 4rem;
+    }
+}
+
+.active-nav-link{
+    background-color: var(--mat);
+}

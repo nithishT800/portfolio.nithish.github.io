@@ -1,0 +1,39 @@
+@use "sass:math";
+
+.project-form {
+    padding: 0rem 12rem 0rem 12rem;
+}
+
+@media (max-width: 599.98px) {
+    .project-form {
+        padding: 0rem 0rem 0rem 0rem;
+    }
+}
+
+/* For screens between 600px and 959.98px */
+@media (min-width: 600px) and (max-width: 959.98px) {
+    .project-form {
+        padding: 0rem 0rem 0rem 0rem;
+    }
+}
+
+/* For screens between 960px and 1279.98px */
+@media (min-width: 960px) and (max-width: 1279.98px) {
+    .project-form {
+        padding: 0rem 12rem 0rem 12rem;
+    }
+}
+
+/* For screens between 1280px and 1919.98px in landscape orientation */
+@media (min-width: 1280px) and (max-width: 1919.98px) and (orientation: landscape) {
+    .project-form {
+        padding: 0rem 12rem 0rem 12rem;
+    }
+}
+
+/* For screens larger than 1920px in landscape orientation */
+@media (min-width: 1920px) and (orientation: landscape) {
+    .project-form {
+        padding: 0rem 12rem 0rem 12rem;
+    }
+}

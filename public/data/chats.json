@@ -1,0 +1,363 @@
+[
+    {
+      "chat_user": "Tom Holland",
+      "chat_user_photo": "https://example.com/tom_holland.jpg",
+      "chat_last_message": "Yes, will look at it",
+      "chat_last_message_time": "10:27 pm",
+      "chat_unread_message_count": 2,
+      "chat_last_message_seen_status": "not_read",
+      "chat_message_uid": "9b0c2d1e-4f8a-7e6d-a3b5-1f0e5c8b9d2a"
+    },
+    {
+      "chat_user": "Scarlet Johnson",
+      "chat_user_photo": "https://example.com/scarlet_johnson.jpg",
+      "chat_last_message": "Hey, how are you?",
+      "chat_last_message_time": "Aug 5, 2024",
+      "chat_unread_message_count": 0,
+      "chat_last_message_seen_status": "read",
+      "chat_message_uid": "a1b2c3d4-e5f6-789a-bcde-f01234567890"
+    },
+    {
+      "chat_user": "Chris Evans",
+      "chat_user_photo": "https://example.com/chris_evans.jpg",
+      "chat_last_message": "Meeting tomorrow at 10 AM",
+      "chat_last_message_time": "Yesterday",
+      "chat_unread_message_count": 1,
+      "chat_last_message_seen_status": "not_read",
+      "chat_message_uid": "f0123456-789a-bcde-f012-34567890ab"
+    },
+    {
+      "chat_user": "Robert Downey Jr.",
+      "chat_user_photo": "https://example.com/robert_downey_jr.jpg",
+      "chat_last_message": "Call me later",
+      "chat_last_message_time": "12:34 pm",
+      "chat_unread_message_count": 0,
+      "chat_last_message_seen_status": "read",
+      "chat_message_uid": "23456789-abcdef-0123-4567-89abcdef0123"
+    },
+    {
+      "chat_user": "Mark Ruffalo",
+      "chat_user_photo": "https://example.com/mark_ruffalo.jpg",
+      "chat_last_message": "Got it",
+      "chat_last_message_time": "Aug 3, 2024",
+      "chat_unread_message_count": 3,
+      "chat_last_message_seen_status": "not_read",
+      "chat_message_uid": "3456789a-bcdef0-1234-5678-9abcdef01234"
+    },
+    {
+      "chat_user": "Chris Hemsworth",
+      "chat_user_photo": "https://example.com/chris_hemsworth.jpg",
+      "chat_last_message": "See you there",
+      "chat_last_message_time": "Aug 1, 2024",
+      "chat_unread_message_count": 0,
+      "chat_last_message_seen_status": "read",
+      "chat_message_uid": "456789ab-cdef01-2345-6789-abcdef012345"
+    },
+    {
+      "chat_user": "Jeremy Renner",
+      "chat_user_photo": "https://example.com/jeremy_renner.jpg",
+      "chat_last_message": "Sounds good",
+      "chat_last_message_time": "Jul 30, 2024",
+      "chat_unread_message_count": 2,
+      "chat_last_message_seen_status": "not_read",
+      "chat_message_uid": "56789abc-def012-3456-789a-bcdef0123456"
+    },
+    {
+      "chat_user": "Don Cheadle",
+      "chat_user_photo": "https://example.com/don_cheadle.jpg",
+      "chat_last_message": "Working on it",
+      "chat_last_message_time": "Jul 28, 2024",
+      "chat_unread_message_count": 1,
+      "chat_last_message_seen_status": "not_read",
+      "chat_message_uid": "6789abcd-ef0123-4567-89ab-cdef01234567"
+    },
+    {
+      "chat_user": "Paul Rudd",
+      "chat_user_photo": "https://example.com/paul_rudd.jpg",
+      "chat_last_message": "Will do",
+      "chat_last_message_time": "Jul 26, 2024",
+      "chat_unread_message_count": 0,
+      "chat_last_message_seen_status": "read",
+      "chat_message_uid": "789abcdef-012345-6789-abcd-ef012345678"
+    },
+    {
+      "chat_user": "Benedict Cumberbatch",
+      "chat_user_photo": "https://example.com/benedict_cumberbatch.jpg",
+      "chat_last_message": "Let me know",
+      "chat_last_message_time": "Jul 24, 2024",
+      "chat_unread_message_count": 3,
+      "chat_last_message_seen_status": "not_read",
+      "chat_message_uid": "89abcdef0-123456-789a-bcde-f0123456789"
+    },
+    {
+      "chat_user": "Zoe Saldana",
+      "chat_user_photo": "https://example.com/zoe_saldana.jpg",
+      "chat_last_message": "Sounds good",
+      "chat_last_message_time": "Jul 22, 2024",
+      "chat_unread_message_count": 0,
+      "chat_last_message_seen_status": "read",
+      "chat_message_uid": "9abcdef01-234567-89ab-cdef-0123456789a"
+    },
+    {
+      "chat_user": "Bradley Cooper",
+      "chat_user_photo": "https://example.com/bradley_cooper.jpg",
+      "chat_last_message": "Got it",
+      "chat_last_message_time": "Jul 20, 2024",
+      "chat_unread_message_count": 2,
+      "chat_last_message_seen_status": "not_read",
+      "chat_message_uid": "abcdef012-345678-9abc-def0-123456789ab"
+    },
+    {
+      "chat_user": "Vin Diesel",
+      "chat_user_photo": "https://example.com/vin_diesel.jpg",
+      "chat_last_message": "Will do",
+      "chat_last_message_time": "Jul 18, 2024",
+      "chat_unread_message_count": 1,
+      "chat_last_message_seen_status": "not_read",
+      "chat_message_uid": "cdef0123-456789-abcdef-012-3456789abc"
+    },
+    {
+        "chat_user": "Charlize Theron",
+        "chat_user_photo": "https://example.com/charlize_theron.jpg",
+        "chat_last_message": "Sounds good",
+        "chat_last_message_time": "Jul 16, 2024",
+        "chat_unread_message_count": 0,
+        "chat_last_message_seen_status": "read",
+        "chat_message_uid": "cdef0123-456789-abcdef-012-3456789abc"
+      },
+      {
+        "chat_user": "Dwayne Johnson",
+        "chat_user_photo": "https://example.com/dwayne_johnson.jpg",
+        "chat_last_message": "Got it",
+        "chat_last_message_time": "Jul 14, 2024",
+        "chat_unread_message_count": 2,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "def01234-56789a-bcdef0-123-456789abcdef"
+      },
+      {
+        "chat_user": "Margot Robbie",
+        "chat_user_photo": "https://example.com/margot_robbie.jpg",
+        "chat_last_message": "Will do",
+        "chat_last_message_time": "Jul 12, 2024",
+        "chat_unread_message_count": 1,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "ef012345-6789ab-cdef01-234-56789abcdef"
+      },
+      {
+        "chat_user": "Gal Gadot",
+        "chat_user_photo": "https://example.com/gal_gadot.jpg",
+        "chat_last_message": "Sounds good",
+        "chat_last_message_time": "Jul 10, 2024",
+        "chat_unread_message_count": 0,
+        "chat_last_message_seen_status": "read",
+        "chat_message_uid": "f0123456-789abcd-ef0123-456-789abcdef0"
+      },
+      {
+        "chat_user": "Jason Momoa",
+        "chat_user_photo": "https://example.com/jason_momoa.jpg",
+        "chat_last_message": "Got it",
+        "chat_last_message_time": "Jul 8, 2024",
+        "chat_unread_message_count": 3,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "01234567-89abcdef012-345-6789abcdef0"
+      },
+      {
+        "chat_user": "Brie Larson",
+        "chat_user_photo": "https://example.com/brie_larson.jpg",
+        "chat_last_message": "Will do",
+        "chat_last_message_time": "Jul 6, 2024",
+        "chat_unread_message_count": 2,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "12345678-9abcdef01234-567-89abcdef01"
+      },
+      {
+        "chat_user": "Scarlett Johansson",
+        "chat_user_photo": "https://example.com/scarlett_johansson.jpg",
+        "chat_last_message": "Sounds good",
+        "chat_last_message_time": "Jul 4, 2024",
+        "chat_unread_message_count": 0,
+        "chat_last_message_seen_status": "read",
+        "chat_message_uid": "23456789-abcdef012345-678-9abcdef012"
+      },
+      {
+        "chat_user": "Chris Pratt",
+        "chat_user_photo": "https://example.com/chris_pratt.jpg",
+        "chat_last_message": "Got it",
+        "chat_last_message_time": "Jul 2, 2024",
+        "chat_unread_message_count": 1,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "3456789a-bcdef0123456-789-abcdef0123"
+      },
+      {
+        "chat_user": "Zoe Kravitz",
+        "chat_user_photo": "https://example.com/zoe_kravitz.jpg",
+        "chat_last_message": "Will do",
+        "chat_last_message_time": "Jun 30, 2024",
+        "chat_unread_message_count": 0,
+        "chat_last_message_seen_status": "read",
+        "chat_message_uid": "456789ab-cdef01234567-89a-bcdef01234"
+      },
+      {
+        "chat_user": "Karen Gillan",
+        "chat_user_photo": "https://example.com/karen_gillan.jpg",
+        "chat_last_message": "Sounds good",
+        "chat_last_message_time": "Jun 28, 2024",
+        "chat_unread_message_count": 2,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "56789abcd-ef0123456789-ab-cdef012345"
+      },
+      {
+        "chat_user": "Pom Klementieff",
+        "chat_user_photo": "https://example.com/pom_klementieff.jpg",
+        "chat_last_message": "Got it",
+        "chat_last_message_time": "Jun 26, 2024",
+        "chat_unread_message_count": 1,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "6789abcdef-0123456789ab-cd-ef0123456"
+      },
+      {
+        "chat_user": "Elizabeth Olsen",
+        "chat_user_photo": "https://example.com/elizabeth_olsen.jpg",
+        "chat_last_message": "Will do",
+        "chat_last_message_time": "Jun 24, 2024",
+        "chat_unread_message_count": 0,
+        "chat_last_message_seen_status": "read",
+        "chat_message_uid": "789abcdef0-123456789abcd-ef-01234567"
+      },
+      {
+        "chat_user": "Hayley Atwell",
+        "chat_user_photo": "https://example.com/hayley_atwell.jpg",
+        "chat_last_message": "Sounds good",
+        "chat_last_message_time": "Jun 22, 2024",
+        "chat_unread_message_count": 3,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "89abcdef01-23456789abcdef-01-2345678"
+      },
+      {
+        "chat_user": "Emily Blunt",
+        "chat_user_photo": "https://example.com/emily_blunt.jpg",
+        "chat_last_message": "Got it",
+        "chat_last_message_time": "Jun 20, 2024",
+        "chat_unread_message_count": 2,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "9abcdef012-3456789abcdef01-2345678"
+      },
+      {
+        "chat_user": "Jessica Chastain",
+        "chat_user_photo": "https://example.com/jessica_chastain.jpg",
+        "chat_last_message": "Will do",
+        "chat_last_message_time": "Jun 18, 2024",
+        "chat_unread_message_count": 1,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "abcdef0123-456789abcdef012-3456789"
+      },
+      {
+        "chat_user": "Jennifer Lawrence",
+        "chat_user_photo": "https://example.com/jennifer_lawrence.jpg",
+        "chat_last_message": "Sounds good",
+        "chat_last_message_time": "Jun 16, 2024",
+        "chat_unread_message_count": 0,
+        "chat_last_message_seen_status": "read",
+        "chat_message_uid": "cdef01234-56789abcdef0123-456789a"
+      },
+      {
+        "chat_user": "Millie Bobby Brown",
+        "chat_user_photo": "https://example.com/millie_bobby_brown.jpg",
+        "chat_last_message": "Got it",
+        "chat_last_message_time": "Jun 14, 2024",
+        "chat_unread_message_count": 3,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "def012345-6789abcdef01234-56789ab"
+      },
+      {
+        "chat_user": "Florence Pugh",
+        "chat_user_photo": "https://example.com/florence_pugh.jpg",
+        "chat_last_message": "Will do",
+        "chat_last_message_time": "Jun 12, 2024",
+        "chat_unread_message_count": 2,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "ef0123456-789abcdef012345-6789abcd"
+      },
+      {
+        "chat_user": "Margot Robbie",
+        "chat_user_photo": "https://example.com/margot_robbie.jpg",
+        "chat_last_message": "Sounds good",
+        "chat_last_message_time": "Jun 10, 2024",
+        "chat_unread_message_count": 1,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "f01234567-89abcdef0123456-789abcde"
+      },
+      {
+        "chat_user": "Saoirse Ronan",
+        "chat_user_photo": "https://example.com/saoirse_ronan.jpg",
+        "chat_last_message": "Got it",
+        "chat_last_message_time": "Jun 8, 2024",
+        "chat_unread_message_count": 0,
+        "chat_last_message_seen_status": "read",
+        "chat_message_uid": "012345678-9abcdef01234567-89abcdef"
+      },
+      {
+        "chat_user": "Emma Stone",
+        "chat_user_photo": "https://example.com/emma_stone.jpg",
+        "chat_last_message": "Will do",
+        "chat_last_message_time": "Jun 6, 2024",
+        "chat_unread_message_count": 3,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "123456789-abcdef012345678-9abcdef0"
+      },
+      {
+        "chat_user": "Jennifer Aniston",
+        "chat_user_photo": "https://example.com/jennifer_aniston.jpg",
+        "chat_last_message": "Sounds good",
+        "chat_last_message_time": "Jun 4, 2024",
+        "chat_unread_message_count": 2,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "23456789a-bcdef0123456789-abcdef01"
+      },
+      {
+        "chat_user": "Reese Witherspoon",
+        "chat_user_photo": "https://example.com/reese_witherspoon.jpg",
+        "chat_last_message": "Got it",
+        "chat_last_message_time": "Jun 2, 2024",
+        "chat_unread_message_count": 1,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "3456789ab-cdef0123456789a-bcdef012"
+      },
+      {
+        "chat_user": "Sandra Bullock",
+        "chat_user_photo": "https://example.com/sandra_bullock.jpg",
+        "chat_last_message": "Will do",
+        "chat_last_message_time": "May 31, 2024",
+        "chat_unread_message_count": 0,
+        "chat_last_message_seen_status": "read",
+        "chat_message_uid": "456789abcd-ef0123456789ab-cdef0123"
+      },
+      {
+        "chat_user": "Julia Roberts",
+        "chat_user_photo": "https://example.com/julia_roberts.jpg",
+        "chat_last_message": "Sounds good",
+        "chat_last_message_time": "May 29, 2024",
+        "chat_unread_message_count": 3,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "56789abcdef-0123456789abcd-ef01234"
+      },
+      {
+        "chat_user": "Meryl Streep",
+        "chat_user_photo": "https://example.com/meryl_streep.jpg",
+        "chat_last_message": "Got it",
+        "chat_last_message_time": "May 27, 2024",
+        "chat_unread_message_count": 2,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "6789abcdef0-123456789abcdef-012345"
+      },
+      {
+        "chat_user": "Cate Blanchett",
+        "chat_user_photo": "https://example.com/cate_blanchett.jpg",
+        "chat_last_message": "Will do",
+        "chat_last_message_time": "May 25, 2024",
+        "chat_unread_message_count": 1,
+        "chat_last_message_seen_status": "not_read",
+        "chat_message_uid": "789abcdef01-23456789abcdef01-23456"
+      }
+]
+    

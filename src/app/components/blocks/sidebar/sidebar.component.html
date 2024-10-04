@@ -1,0 +1,7 @@
+@if(sidebar_key && sidebar_key != 'undefined'){
+    @switch (sidebar_key) {
+        @case ('navigation_menu') {
+            <sidebar-nav-menu [nav_menu]="sidebar_data"/>
+        }
+    }
+}
