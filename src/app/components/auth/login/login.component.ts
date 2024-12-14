@@ -9,11 +9,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterLink } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackbarComponent } from '../../blocks/snackbar/snackbar.component';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { CommonService } from '../../../services/common.service';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatCardModule, FormsModule, MatFormFieldModule, MatInputModule,MatButtonModule, MatIconModule, RouterLink],
+  imports: [MatCardModule, FormsModule, MatFormFieldModule, MatInputModule,MatButtonModule, MatIconModule, RouterLink, MatTooltipModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit{
     private _snackBar = inject(MatSnackBar);
     public credentials:any = {}
     public is_loading:boolean = false;
-    constructor(private data:DataService, private router:Router){}
+    constructor(private data:DataService, private router:Router, private common:CommonService){}
 
     ngOnInit(): void {
         
@@ -36,10 +37,11 @@ export class LoginComponent implements OnInit{
 
     login(loginForm:NgForm){
         this.is_loading = true
-        console.log(loginForm.valid, 'loginForm.valid')
         if(loginForm.valid){
+            this.common.setLoading();
             setTimeout(() => {
-                this.is_loading = true
+                //this.is_loading = true
+                this.common.unsetLoading();
                 this._snackBar.openFromComponent(SnackbarComponent, {data: 'message_login_success'});
                 this.router.navigate(['/employer/dashboard'])
             }, 1500)

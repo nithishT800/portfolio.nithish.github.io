@@ -1,0 +1,135 @@
+<div mat-dialog-title class="text-center">{{hire_freelancer_active_step.label}}</div>
+<mat-dialog-content>
+    @switch (hire_freelancer_active_step.value) {
+        @case ('overview'){
+            <mat-list>
+                <div mat-subheader class="mat-label-large">Offer summary</div>
+                <mat-list-item>
+                    <div class="flex justify-content-between align-items-center">
+                        <div >Daily rate</div>
+                        <div class="flex align-items-center mat-body-small">{{data.freelancer_contract_offer}} × 12 Days</div>
+                        <div class=""><div class="mat-body-large text-right">$4000</div></div>
+                    </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <div class="flex justify-content-between align-items-center">
+                        <div class=" flex align-items-center gap-1">
+                            <span>Service fee</span> 
+                            <mat-icon class="text-xl cursor-pointer" matTooltip="This amount is charged by the freehire platform, but it will be refunded to your account once the contract is completed.">help</mat-icon>
+                        </div>
+                        <div class=""><div class="mat-body-large text-right">$400</div></div>
+                    </div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <div class="flex justify-content-between align-items-center">
+                        <div class="">Total</div>
+                        <div class=""><div class="mat-body-large text-right">$4400</div></div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        }
+        @case ('payment'){
+            <form #cardForm="ngForm">
+                <div class="p-fluid">
+                    <div class="field">
+                        <mat-form-field appearance="outline" class="w-full">
+                            <mat-label>Card number</mat-label>
+                            <input matInput [(ngModel)]="credit_card.card_number" name="card_number" placeholder="Card number" type="text"  PaymentCardNumber>
+                            <mat-icon matSuffix>credit_card</mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div class="field">
+                        <mat-form-field appearance="outline" class="w-full">
+                            <mat-label>Name on card</mat-label>
+                            <input matInput [(ngModel)]="credit_card.card_holder_name" name="card_holder_name" placeholder="Card number" type="text">
+                            <mat-icon matSuffix>abc</mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div class="formgrid grid">
+                        <div class="field col">
+                            <mat-form-field appearance="outline" class="w-full">
+                                <mat-label>Expiry</mat-label>
+                                <input matInput placeholder="Card number" name="expiry_year_month" [(ngModel)]="credit_card.expiry_year_month" type="text" PaymentCardExpiry>
+                                <mat-icon matSuffix>calendar_month</mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="field col">
+                            <mat-form-field appearance="outline" class="w-full">
+                                <mat-label>CVV</mat-label>
+                                <input matInput placeholder="Card number" name="cvv" [(ngModel)]="credit_card.cvv" type="text" Numberonly [maxLength]="4">
+                                <mat-icon matSuffix>password_2</mat-icon>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="">
+                        <label class="mat-label-large text-red-500">Note: </label>
+                        <div mat-subheader>
+                            We will save your card information for future use. All data is encrypted and securely stored. No one is allowed to access your data.
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+            <mat-selection-list #card [multiple]="false">
+                <div mat-subheader>Saved cards</div>
+                @for(card of credit_card_list; track $index){
+                    <mat-list-option [value]="card" (selectedChange)="selectCard(card)">
+                        <mat-icon matListItemIcon>credit_card</mat-icon>
+                        <div matListItemTitle>{{card.card_number_text}}</div>
+                        <div matListItemLine>{{card.brand}} • {{card.card_holder_name}} • {{card.expiry_month}}/{{card.expiry_year}}</div>
+                    </mat-list-option>
+                }
+            </mat-selection-list>
+        }
+
+        @case ('confirm'){
+            <div class="p-fluid">
+                <div class="field">
+                    <label class="mat-label-large">Card number</label>
+                    <div>{{credit_card.card_number}}</div>
+                </div>
+                @if(credit_card.brand){
+                    <div class="field">
+                        <label class="mat-label-large">Brand</label>
+                        <div>{{credit_card.brand}}</div>
+                    </div>
+                }
+                <div class="field">
+                    <label class="mat-label-large">Card holder</label>
+                    <div>{{credit_card.card_holder_name}}</div>
+                </div>
+                <div class="field">
+                    <label class="mat-label-large">Card expiry</label>
+                    @if(!credit_card.expiry_year_month){<div>{{credit_card.expiry_month}}/{{credit_card.expiry_year}}</div>}
+                    @if(credit_card.expiry_year_month){<div>{{credit_card.expiry_year_month}}</div>}
+                </div>
+            </div>
+            <div mat-subheader class="text-red-500">We will charge the above card for the payment amount of $4400. Are you sure you want to Proceed?</div>
+        }
+
+        @case ('done'){
+            <div class="flex justify-content-center align-items-center flex-column">
+                <ng-lottie class="flex" width="10rem" height="10rem" [options]="options" (animationCreated)="animationCreated($event)" />
+                <div mat-subheader>Payment successful. Freelancer hired successfully.</div>
+                <div mat-subheader class="mb-3">You can now access the contract.</div>
+                <button matTooltip="View contract" (click)="closeReviewOffer()" mat-stroked-button aria-label="Goto contract button"><div class="flex align-items-center gap-1"><span>View contract</span><mat-icon matListItemIcon>arrow_outward</mat-icon></div></button>
+            </div>
+        }
+    }
+</mat-dialog-content>
+@if(hire_freelancer_active_step.value != 'done'){
+    <mat-dialog-actions class="flex justify-content-between align-items-center">
+        <div class="flex justify-content-start">{{getActiveStepIndex()}}/{{hire_freelancer_steps.length}}</div>
+        <div class="flex gap-2 align-items-center">
+            <button  matTooltip="Cancel" (click)="closeReviewOffer()" mat-button aria-label="Cancel accepting offer button">Cancel</button>
+            @if(hire_freelancer_active_step.value != 'overview'){<button  matTooltip="Back" (click)="goToPreviousStep()" mat-stroked-button aria-label="Move back step for offer button">Back</button>}
+            @if(hire_freelancer_active_step.value != 'confirm'){<button  matTooltip="Next" (click)="goToNextStep()"  mat-flat-button aria-label="Move next step for hiring button">Next</button>}
+            @if(hire_freelancer_active_step.value == 'confirm'){
+                <button color="primary" matTooltip="Proceed" (click)="makePayment()"  mat-flat-button aria-label="Move next step for hiring button">
+                    Proceed
+                </button>
+            }
+        </div>
+    </mat-dialog-actions>
+}

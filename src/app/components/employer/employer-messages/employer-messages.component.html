@@ -1,1 +1,120 @@
-<h1>Messages</h1>
+<!-- <h1>Messages</h1> -->
+<div class="mat-display-small">Messages</div>
+<div class="grid messages-section-layout">
+    <div class="col-12 md:col-4" [ngClass]="{'hidden': (messages.length > 0 && isMobileMode())}">
+        <mat-card appearance="outlined" class="h-full">
+            <mat-card-header class="flex flex-column gap-2">
+                <div class="w-full flex justify-content-between align-items-center">
+                    <mat-card-title>Chats</mat-card-title>
+                    <div class="flex align-items-center gap-2">
+                        <button mat-icon-button class="example-icon" (click)="can_show_search = !can_show_search" aria-label="Example icon-button with share icon">
+                            <mat-icon>{{(can_show_search) ? 'close' : 'search'}}</mat-icon>
+                        </button>
+                        <button mat-icon-button class="example-icon" [matMenuTriggerFor]="chatSectionToolbarContextMenu" aria-label="Example icon-button with share icon">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                @if(can_show_search){
+                    <div class="flex">
+                        <mat-form-field class="w-full px-0" appearance="outline">
+                            <input matInput placeholder="Search" >
+                        </mat-form-field>
+                    </div>
+                }
+            </mat-card-header>
+            <mat-card-content class="h-full">
+                <cdk-virtual-scroll-viewport itemSize="1" class="example-viewport">
+                    <mat-nav-list>
+                        <mat-list-item *cdkVirtualFor="let chat of chat_list" class="flex align-items-center" (click)="getChatMessages(chat)">
+                            <div matListItemTitle>
+                                {{chat.chat_user}}
+                            </div>
+                            @if(chat.chat_unread_message_count){
+                                <div matListItemMeta class="unread-messages">{{chat.chat_unread_message_count}}</div>
+                            }
+                        </mat-list-item>
+                    </mat-nav-list>
+                    <!-- <div *cdkVirtualFor="let item of message_list" class="example-item">
+                        {{item.chat_user}}
+                    </div> -->
+                </cdk-virtual-scroll-viewport>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-12 md:col-8 hidden md:block" [ngClass]="{'block': (messages.length > 0 && isMobileMode())}">
+        <mat-card appearance="outlined" class="h-full">
+            @if(messages.length > 0){
+                <mat-card-header>
+                    <div mat-card-avatar class="chat-header-image"></div>
+                    <mat-card-title>{{active_chat.chat_user}}</mat-card-title>
+                    <mat-card-subtitle><div class="mat-label-small">Online</div></mat-card-subtitle>
+                    <span class="flex-auto"></span>
+                    <button mat-icon-button class="example-icon" [matMenuTriggerFor]="messagesSectionToolbarContextMenu" aria-label="Example icon-button with share icon">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <button mat-icon-button class="example-icon" (click)="closeChat()" aria-label="Example icon-button with share icon">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-card-header>
+            }
+            <mat-card-content class="h-full">
+                @if(!messages.length){
+                    <div class="text-center mat-label-large flex justify-content-center align-items-center h-full">Start conversation</div>
+                }@else {
+                    <cdk-virtual-scroll-viewport itemSize="1" class="example-viewport">
+                        <div class="flex flex-column gap-3">
+                            <div *cdkVirtualFor="let message of messages" class="flex" [ngClass]="{'gap-1 justify-content-start': (message.direction == 'received'), 'justify-content-end': (message.direction == 'sent')}">
+                                <div [ngClass]="{'sender-message-pill': (message.direction == 'sent'), 'receiver-message-pill': (message.direction == 'received')}">
+                                    <div class="flex flex-column">
+                                        <div class="mat-body-medium">{{message.message}}</div>
+                                        <div class="mat-label-small text-right">{{message.time | date : 'shortTime'}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <mat-nav-list>
+                            <mat-list-item *cdkVirtualFor="let chat of chat_list" class="flex align-items-center" (click)="getChatMessages(chat)">
+                                <div matListItemTitle>
+                                    {{chat.chat_user}}
+                                </div>
+                                @if(chat.chat_unread_message_count){
+                                    <div matListItemMeta class="unread-messages">{{chat.chat_unread_message_count}}</div>
+                                }
+                            </mat-list-item>
+                        </mat-nav-list> -->
+                    </cdk-virtual-scroll-viewport>
+                }
+            </mat-card-content>
+            @if(messages.length > 0){
+                <mat-card-footer>
+                    <div class="flex flex-column sm:flex-row align-items-center mt-auto border-top-1 surface-border gap-3 p-3" >
+                        <mat-form-field class="w-full" appearance="outline">
+                            <!-- <button matPrefix mat-icon-button class="ml-2"><mat-icon>attach_file</mat-icon></button> -->
+                            <textarea matInput
+                                    cdkTextareaAutosize
+                                    #autosize="cdkTextareaAutosize"
+                                    cdkAutosizeMinRows="1"
+                                    cdkAutosizeMaxRows="5" placeholder="Type message"></textarea>
+                            <button matSuffix mat-icon-button ><mat-icon>attach_file</mat-icon></button>
+                            <button matSuffix mat-icon-button class="mr-3"><mat-icon>send</mat-icon></button>
+                        </mat-form-field>
+                    </div>   
+                </mat-card-footer>
+            }
+        </mat-card>
+    </div>
+</div>
+
+<mat-menu #chatSectionToolbarContextMenu="matMenu">
+    <button mat-menu-item>New chat</button>
+    <button mat-menu-item>Archive all</button>
+    <button mat-menu-item>Settings</button>
+</mat-menu>
+
+<mat-menu #messagesSectionToolbarContextMenu="matMenu">
+    <button mat-menu-item>Delete Chat</button>
+    <button mat-menu-item>Archive</button>
+    <button mat-menu-item>View profile</button>
+    <button mat-menu-item (click)="closeChat()">Close</button>
+</mat-menu>

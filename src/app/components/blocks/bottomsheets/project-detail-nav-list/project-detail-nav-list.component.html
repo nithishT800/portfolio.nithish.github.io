@@ -1,0 +1,10 @@
+<mat-nav-list>
+    <a [routerLink]="['/employer/projects', 'all']" mat-list-item role="listitem"  (click)="openLink($event)">
+        <span matListItemTitle class="text-blue-500 hover:underline">Go Back</span>
+    </a>
+    @for(item of data.nav_list; track item){
+        <a [routerLink]="['/employer/project-detail', data.params.project_id, item.routerLink]" mat-list-item routerLinkActive="mdc-list-item--activated" role="listitem"  (click)="openLink($event)">
+            <span matListItemTitle>{{item.label}}</span>
+        </a>
+    }
+</mat-nav-list>

@@ -1,122 +1,404 @@
 [
-    {"label": "Python", "value": "python"},
-    {"label": "Java", "value": "java"},
-    {"label": "C_plus_plus", "value": "c_plus_plus"},
-    {"label": "JavaScript", "value": "javascript"},
-    {"label": "C_sharp", "value": "c_sharp"},
-    {"label": "Ruby", "value": "ruby"},
-    {"label": "PHP", "value": "php"},
-    {"label": "Swift", "value": "swift"},
-    {"label": "Kotlin", "value": "kotlin"},
-    {"label": "Go", "value": "go"},
-    {"label": "R", "value": "r"},
-    {"label": "SQL", "value": "sql"},
-    {"label": "HTML", "value": "html"},
-    {"label": "CSS", "value": "css"},
-    {"label": "TypeScript", "value": "typescript"},
-    {"label": "Dart", "value": "dart"},
-    {"label": "MATLAB", "value": "matlab"},
-    {"label": "Scala", "value": "scala"},
-    {"label": "Perl", "value": "perl"},
-    {"label": "Bash", "value": "bash"},
-    {"label": "Assembly", "value": "assembly"},
-    {"label": "Machine_Learning", "value": "machine_learning"},
-    {"label": "Deep_Learning", "value": "deep_learning"},
-    {"label": "Data_Analysis", "value": "data_analysis"},
-    {"label": "Data_Visualization", "value": "data_visualization"},
-    {"label": "Data_Mining", "value": "data_mining"},
-    {"label": "Statistical_Modeling", "value": "statistical_modeling"},
-    {"label": "Natural_Language_Processing", "value": "natural_language_processing"},
-    {"label": "Computer_Vision", "value": "computer_vision"},
-    {"label": "Front_End_Development", "value": "front_end_development"},
-    {"label": "Back_End_Development", "value": "back_end_development"},
-    {"label": "Full_Stack_Development", "value": "full_stack_development"},
-    {"label": "React", "value": "react"},
-    {"label": "Angular", "value": "angular"},
-    {"label": "Vue", "value": "vue"},
-    {"label": "Node_js", "value": "node_js"},
-    {"label": "Django", "value": "django"},
-    {"label": "Ruby_on_Rails", "value": "ruby_on_rails"},
-    {"label": "Flask", "value": "flask"},
-    {"label": "Android_Development", "value": "android_development"},
-    {"label": "iOS_Development", "value": "ios_development"},
-    {"label": "Flutter", "value": "flutter"},
-    {"label": "React_Native", "value": "react_native"},
-    {"label": "AWS", "value": "aws"},
-    {"label": "Azure", "value": "azure"},
-    {"label": "Google_Cloud", "value": "google_cloud"},
-    {"label": "DevOps", "value": "devops"},
-    {"label": "Cloud_Security", "value": "cloud_security"},
-    {"label": "Software_Design", "value": "software_design"},
-    {"label": "Software_Architecture", "value": "software_architecture"},
-    {"label": "Software_Testing", "value": "software_testing"},
-    {"label": "Software_Development_Lifecycle", "value": "software_development_lifecycle"},
-    {"label": "Agile_Methodologies", "value": "agile_methodologies"},
-    {"label": "Scrum", "value": "scrum"},
-    {"label": "Kanban", "value": "kanban"},
-    {"label": "MySQL", "value": "mysql"},
-    {"label": "PostgreSQL", "value": "postgresql"},
-    {"label": "Oracle", "value": "oracle"},
-    {"label": "MongoDB", "value": "mongodb"},
-    {"label": "Cassandra", "value": "cassandra"},
-    {"label": "Redis", "value": "redis"},
-    {"label": "SQLite", "value": "sqlite"},
-    {"label": "Recruitment", "value": "recruitment"},
-    {"label": "Onboarding", "value": "onboarding"},
-    {"label": "Performance_Management", "value": "performance_management"},
-    {"label": "Employee_Relations", "value": "employee_relations"},
-    {"label": "Compensation_Benefits", "value": "compensation_benefits"},
-    {"label": "Training_Development", "value": "training_development"},
-    {"label": "Talent_Acquisition", "value": "talent_acquisition"},
-    {"label": "Succession_Planning", "value": "succession_planning"},
-    {"label": "Diversity_Inclusion", "value": "diversity_inclusion"},
-    {"label": "Labor_Relations", "value": "labor_relations"},
-    {"label": "HRIS", "value": "HRIS"},
-    {"label": "Communication", "value": "communication"},
-    {"label": "Teamwork", "value": "teamwork"},
-    {"label": "Problem_Solving", "value": "problem_solving"},
-    {"label": "Leadership", "value": "leadership"},
-    {"label": "Time_Management", "value": "time_management"},
-    {"label": "Presentation", "value": "presentation"},
-    {"label": "Negotiation", "value": "negotiation"},
-    {"label": "Customer_Service", "value": "customer_service"},
-    {"label": "Sales", "value": "sales"},
-    {"label": "Marketing", "value": "marketing"},
-    {"label": "Project_Management", "value": "project_management"},
-    {"label": "Financial_Analysis", "value": "financial_analysis"},
-    {"label": "Business_Development", "value": "business_development"},
-    {"label": "Public_Relations", "value": "public_relations"},
-    {"label": "Human_Resources", "value": "human_resources"},
-    {"label": "Research", "value": "research"},
-    {"label": "Writing", "value": "writing"},
-    {"label": "Editing", "value": "editing"},
-    {"label": "Proofreading", "value": "proofreading"},
-    {"label": "Translation", "value": "translation"},
-    {"label": "Interpretation", "value": "interpretation"},
-    {"label": "Financial_Analysis", "value": "financial_analysis"},
-    {"label": "Financial_Modeling", "value": "financial_modeling"},
-    {"label": "Financial_Reporting", "value": "financial_reporting"},
-    {"label": "Auditing", "value": "auditing"},
-    {"label": "Taxation", "value": "taxation"},
-    {"label": "Cost_Accounting", "value": "cost_accounting"},
-    {"label": "Budgeting", "value": "budgeting"},
-    {"label": "Forecasting", "value": "forecasting"},
-    {"label": "Financial_Management", "value": "financial_management"},
-    {"label": "Risk_Management", "value": "risk_management"},
-    {"label": "Investment_Analysis", "value": "investment_analysis"},
-    {"label": "Legal_Research", "value": "legal_research"},
-    {"label": "Legal_Writing", "value": "legal_writing"},
-    {"label": "Contract_Law", "value": "contract_law"},
-    {"label": "Criminal_Law", "value": "criminal_law"},
-    {"label": "Civil_Law", "value": "civil_law"},
-    {"label": "Investigation", "value": "investigation"},
-    {"label": "Interrogation", "value": "interrogation"},
-    {"label": "Crisis_Management", "value": "crisis_management"},
-    {"label": "Forensic_Science", "value": "forensic_science"},
-    {"label": "Criminal_Profiling", "value": "criminal_profiling"},
-    {"label": "Self_Defense_Tactics", "value": "self_defense_tactics"},
-    {"label": "Firearms_Proficiency", "value": "firearms_proficiency"},
-    {"label": "First_Aid", "value": "first_aid"}
-]
-  
-        
+    {
+       "skill_name": "Python",
+       "skill_value": "python"
+    },
+    {
+       "skill_name": "Django Framework",
+       "skill_value": "django_framework"
+    },
+    {
+       "skill_name": "JavaScript",
+       "skill_value": "javascript"
+    },
+    {
+       "skill_name": "React.js",
+       "skill_value": "react_js"
+    },
+    {
+       "skill_name": "Node.js",
+       "skill_value": "node_js"
+    },
+    {
+       "skill_name": "HTML",
+       "skill_value": "html"
+    },
+    {
+       "skill_name": "CSS",
+       "skill_value": "css"
+    },
+    {
+       "skill_name": "SQL",
+       "skill_value": "sql"
+    },
+    {
+       "skill_name": "NoSQL",
+       "skill_value": "nosql"
+    },
+    {
+       "skill_name": "AWS",
+       "skill_value": "aws"
+    },
+    {
+       "skill_name": "Google Cloud Platform",
+       "skill_value": "google_cloud_platform"
+    },
+    {
+       "skill_name": "Docker",
+       "skill_value": "docker"
+    },
+    {
+       "skill_name": "Kubernetes",
+       "skill_value": "kubernetes"
+    },
+    {
+       "skill_name": "Git",
+       "skill_value": "git"
+    },
+    {
+       "skill_name": "Linux",
+       "skill_value": "linux"
+    },
+    {
+       "skill_name": "Flask",
+       "skill_value": "flask"
+    },
+    {
+       "skill_name": "Java",
+       "skill_value": "java"
+    },
+    {
+       "skill_name": "Spring Framework",
+       "skill_value": "spring_framework"
+    },
+    {
+       "skill_name": "C++",
+       "skill_value": "cpp"
+    },
+    {
+       "skill_name": "C#",
+       "skill_value": "c_sharp"
+    },
+    {
+       "skill_name": "Ruby",
+       "skill_value": "ruby"
+    },
+    {
+       "skill_name": "Ruby on Rails",
+       "skill_value": "ruby_on_rails"
+    },
+    {
+       "skill_name": "PHP",
+       "skill_value": "php"
+    },
+    {
+       "skill_name": "Laravel",
+       "skill_value": "laravel"
+    },
+    {
+       "skill_name": "Angular.js",
+       "skill_value": "angular_js"
+    },
+    {
+       "skill_name": "Vue.js",
+       "skill_value": "vue_js"
+    },
+    {
+       "skill_name": "TypeScript",
+       "skill_value": "typescript"
+    },
+    {
+       "skill_name": "jQuery",
+       "skill_value": "jquery"
+    },
+    {
+       "skill_name": "GraphQL",
+       "skill_value": "graphql"
+    },
+    {
+       "skill_name": "REST APIs",
+       "skill_value": "rest_apis"
+    },
+    {
+       "skill_name": "SOAP APIs",
+       "skill_value": "soap_apis"
+    },
+    {
+       "skill_name": "PostgreSQL",
+       "skill_value": "postgresql"
+    },
+    {
+       "skill_name": "MongoDB",
+       "skill_value": "mongodb"
+    },
+    {
+       "skill_name": "Redis",
+       "skill_value": "redis"
+    },
+    {
+       "skill_name": "Elasticsearch",
+       "skill_value": "elasticsearch"
+    },
+    {
+       "skill_name": "Jenkins",
+       "skill_value": "jenkins"
+    },
+    {
+       "skill_name": "CI/CD",
+       "skill_value": "ci_cd"
+    },
+    {
+       "skill_name": "Terraform",
+       "skill_value": "terraform"
+    },
+    {
+       "skill_name": "Ansible",
+       "skill_value": "ansible"
+    },
+    {
+       "skill_name": "Agile Methodology",
+       "skill_value": "agile_methodology"
+    },
+    {
+       "skill_name": "Scrum",
+       "skill_value": "scrum"
+    },
+    {
+       "skill_name": "JIRA",
+       "skill_value": "jira"
+    },
+    {
+       "skill_name": "Salesforce",
+       "skill_value": "salesforce"
+    },
+    {
+       "skill_name": "Tableau",
+       "skill_value": "tableau"
+    },
+    {
+       "skill_name": "Power BI",
+       "skill_value": "power_bi"
+    },
+    {
+       "skill_name": "MATLAB",
+       "skill_value": "matlab"
+    },
+    {
+       "skill_name": "AutoCAD",
+       "skill_value": "autocad"
+    },
+    {
+       "skill_name": "Figma",
+       "skill_value": "figma"
+    },
+    {
+       "skill_name": "Adobe Photoshop",
+       "skill_value": "adobe_photoshop"
+    },
+    {
+       "skill_name": "Adobe Illustrator",
+       "skill_value": "adobe_illustrator"
+    },
+    {
+       "skill_name": "WordPress",
+       "skill_value": "wordpress"
+    },
+    {
+       "skill_name": "SEO",
+       "skill_value": "seo"
+    },
+    {
+        "skill_name": "Scala",
+        "skill_value": "scala"
+     },
+     {
+        "skill_name": "Go (Golang)",
+        "skill_value": "go_golang"
+     },
+     {
+        "skill_name": "Swift",
+        "skill_value": "swift"
+     },
+     {
+        "skill_name": "Objective-C",
+        "skill_value": "objective_c"
+     },
+     {
+        "skill_name": "Perl",
+        "skill_value": "perl"
+     },
+     {
+        "skill_name": "R Programming",
+        "skill_value": "r_programming"
+     },
+     {
+        "skill_name": "SAS",
+        "skill_value": "sas"
+     },
+     {
+        "skill_name": "Hadoop",
+        "skill_value": "hadoop"
+     },
+     {
+        "skill_name": "Spark",
+        "skill_value": "spark"
+     },
+     {
+        "skill_name": "Apache Kafka",
+        "skill_value": "apache_kafka"
+     },
+     {
+        "skill_name": "TensorFlow",
+        "skill_value": "tensorflow"
+     },
+     {
+        "skill_name": "PyTorch",
+        "skill_value": "pytorch"
+     },
+     {
+        "skill_name": "Machine Learning",
+        "skill_value": "machine_learning"
+     },
+     {
+        "skill_name": "Deep Learning",
+        "skill_value": "deep_learning"
+     },
+     {
+        "skill_name": "Data Mining",
+        "skill_value": "data_mining"
+     },
+     {
+        "skill_name": "Natural Language Processing",
+        "skill_value": "natural_language_processing"
+     },
+     {
+        "skill_name": "Big Data",
+        "skill_value": "big_data"
+     },
+     {
+        "skill_name": "Blockchain",
+        "skill_value": "blockchain"
+     },
+     {
+        "skill_name": "Ethereum",
+        "skill_value": "ethereum"
+     },
+     {
+        "skill_name": "Solidity",
+        "skill_value": "solidity"
+     },
+     {
+        "skill_name": "Smart Contracts",
+        "skill_value": "smart_contracts"
+     },
+     {
+        "skill_name": "Augmented Reality (AR)",
+        "skill_value": "augmented_reality"
+     },
+     {
+        "skill_name": "Virtual Reality (VR)",
+        "skill_value": "virtual_reality"
+     },
+     {
+        "skill_name": "Unity 3D",
+        "skill_value": "unity_3d"
+     },
+     {
+        "skill_name": "Unreal Engine",
+        "skill_value": "unreal_engine"
+     },
+     {
+        "skill_name": "Game Development",
+        "skill_value": "game_development"
+     },
+     {
+        "skill_name": "3D Modeling",
+        "skill_value": "3d_modeling"
+     },
+     {
+        "skill_name": "Blender",
+        "skill_value": "blender"
+     },
+     {
+        "skill_name": "Maya",
+        "skill_value": "maya"
+     },
+     {
+        "skill_name": "Cinema 4D",
+        "skill_value": "cinema_4d"
+     },
+     {
+        "skill_name": "Network Security",
+        "skill_value": "network_security"
+     },
+     {
+        "skill_name": "Penetration Testing",
+        "skill_value": "penetration_testing"
+     },
+     {
+        "skill_name": "Ethical Hacking",
+        "skill_value": "ethical_hacking"
+     },
+     {
+        "skill_name": "Cybersecurity",
+        "skill_value": "cybersecurity"
+     },
+     {
+        "skill_name": "ISO 27001",
+        "skill_value": "iso_27001"
+     },
+     {
+        "skill_name": "DevSecOps",
+        "skill_value": "devsecops"
+     },
+     {
+        "skill_name": "ITIL",
+        "skill_value": "itil"
+     },
+     {
+        "skill_name": "COBIT",
+        "skill_value": "cobit"
+     },
+     {
+        "skill_name": "SAP",
+        "skill_value": "sap"
+     },
+     {
+        "skill_name": "Oracle ERP",
+        "skill_value": "oracle_erp"
+     },
+     {
+        "skill_name": "Microsoft Dynamics",
+        "skill_value": "microsoft_dynamics"
+     },
+     {
+        "skill_name": "Business Analysis",
+        "skill_value": "business_analysis"
+     },
+     {
+        "skill_name": "Project Management",
+        "skill_value": "project_management"
+     },
+     {
+        "skill_name": "PMP Certification",
+        "skill_value": "pmp_certification"
+     },
+     {
+        "skill_name": "Six Sigma",
+        "skill_value": "six_sigma"
+     },
+     {
+        "skill_name": "Lean Management",
+        "skill_value": "lean_management"
+     },
+     {
+        "skill_name": "Change Management",
+        "skill_value": "change_management"
+     },
+     {
+        "skill_name": "Risk Management",
+        "skill_value": "risk_management"
+     }
+ ]
+ 
+ 

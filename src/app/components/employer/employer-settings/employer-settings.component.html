@@ -1,1 +1,28 @@
-<h1>Settings</h1>
+<div class="mat-display-small">Settings</div>
+<div class="grid" >
+    <div class="col-12 md:col-3 block md:hidden employer-setting-nav-list-button">
+        <button mat-fab extended (click)="showBottomNavMenu()"><mat-icon>list</mat-icon>Menu</button>
+    </div>
+    <div class="col-12 md:col-3 sticky-layout hidden md:block ">
+        <mat-card appearance="outlined">
+            <mat-card-content>
+                <!-- <a mat-button matTooltip="Back to projects"><mat-icon>arrow_back</mat-icon></a> -->
+                <mat-nav-list>
+                    <!-- <a [routerLink]="['/employer/projects', 'all']" mat-list-item role="listitem">
+                        <span matListItemTitle class="text-blue-500 hover:underline">Go Back</span>
+                    </a> -->
+                    @for (link of setting_nav_list; track link) {
+                        @if(link.value == 'logout'){
+                            <a mat-list-item [routerLink]="['/auth/login']" routerLinkActive="mdc-list-item--activated"><mat-icon matListItemIcon>{{link.icon}}</mat-icon>{{ link.label }}</a>
+                        }@else {
+                            <a mat-list-item [routerLink]="['/employer/settings', link.routerLink]" routerLinkActive="mdc-list-item--activated"><mat-icon matListItemIcon>{{link.icon}}</mat-icon>{{ link.label }}</a>
+                        }
+                    }
+                </mat-nav-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-12 md:col-9">
+        <router-outlet></router-outlet>
+    </div>
+</div>

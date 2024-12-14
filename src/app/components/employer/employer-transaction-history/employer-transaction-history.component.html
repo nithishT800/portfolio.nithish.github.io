@@ -1,1 +1,41 @@
-<h1>Transaction History</h1>
+<div class="mat-display-small">Transaction History</div>
+<mat-card appearance="outlined">
+    <mat-card-content>
+        <div class="mat-elevation-z0">
+            <table mat-table [dataSource]="transaction_list">
+                <ng-container matColumnDef="transaction_type_text">
+                    <th mat-header-cell *matHeaderCellDef>Transaction </th>
+                    <td mat-cell *matCellDef="let element"> {{element.transaction_type_text}} </td>
+                  </ng-container>
+              
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="transaction_reference">
+                    <th mat-header-cell *matHeaderCellDef> Reference </th>
+                    <td mat-cell *matCellDef="let element"> {{element.transaction_reference}} </td>
+                  </ng-container>
+              
+                  <!-- Weight Column -->
+                  <ng-container matColumnDef="transaction_date">
+                    <th mat-header-cell *matHeaderCellDef> Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.transaction_date}} </td>
+                  </ng-container>
+              
+                  <!-- Symbol Column -->
+                  <ng-container matColumnDef="transaction_amount">
+                    <th mat-header-cell *matHeaderCellDef> Amount </th>
+                    <td mat-cell *matCellDef="let element"> {{element.transaction_amount}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="transaction_note">
+                    <th mat-header-cell *matHeaderCellDef> Note </th>
+                    <td mat-cell *matCellDef="let element"> {{element.transaction_note}} </td>
+                  </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+            </mat-paginator>
+        </div>
+    </mat-card-content>
+</mat-card>

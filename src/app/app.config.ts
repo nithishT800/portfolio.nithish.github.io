@@ -7,17 +7,19 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideLottieOptions } from 'ngx-lottie';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
+import { provideStore } from '@ngrx/store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-      provideHttpClient(withFetch()), 
-      provideZoneChangeDetection({ eventCoalescing: true }), 
-      provideRouter(routes), 
-      provideClientHydration(), 
-      provideAnimationsAsync(),
-      provideLottieOptions({
+    provideHttpClient(withFetch()),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideClientHydration(),
+    provideAnimationsAsync(),
+    provideLottieOptions({
         player: () => import('lottie-web'),
-      }),
-      { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2000, horizontalPosition: 'center', verticalPosition: 'top' } }
-  ]
+    }),
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2000, horizontalPosition: 'center', verticalPosition: 'top' } },
+    provideStore()
+]
 };

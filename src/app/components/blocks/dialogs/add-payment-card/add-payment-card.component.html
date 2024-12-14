@@ -1,0 +1,30 @@
+<h5 mat-dialog-title>Manage card</h5>
+<mat-dialog-content>
+    <form #creditCardForm="ngForm">
+        <div class="flex flex-column mt-3">
+            <mat-form-field class="" appearance="outline">
+                <mat-label>Card number</mat-label>
+                <input type="text" matInput placeholder="555-555-1234" PaymentCardNumber name="card_number" [(ngModel)]="card_data.card_number" required>
+                @if(card_data.card_number){<img matSuffix src="logos/{{card_data.card_number | creditCardBrandIdentifier}}.png" height="40px" class="mr-2"/>}
+            </mat-form-field>
+            <div class="flex gap-3 w-full">
+                <mat-form-field  appearance="outline">
+                    <mat-label>Card holder name</mat-label>
+                    <input type="text" matInput placeholder="Enter name" name="card_holder_name" [(ngModel)]="card_data.card_holder_name" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Expiry</mat-label>
+                    <input type="text" matInput placeholder="12/24" PaymentCardExpiry name="expiry_year_month" [(ngModel)]="card_data.expiry_year_month" required>
+                </mat-form-field>
+            </div>
+            <mat-form-field class="" appearance="outline">
+                <mat-label>Note</mat-label>
+                <input type="text" matInput placeholder="Enter note" name="card_note" [(ngModel)]="card_data.card_note">
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button (click)="addCard(creditCardForm)">Add</button>
+</mat-dialog-actions>

@@ -3,6 +3,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { CommonService } from '../../../services/common.service';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -12,4 +13,12 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 })
 export class DashboardComponent {
 
+  constructor(private common:CommonService){}
+
+  setLoading(){
+    this.common.setLoading();
+    setTimeout(() => {
+      this.common.unsetLoading();
+    }, 2000)
+  }
 }

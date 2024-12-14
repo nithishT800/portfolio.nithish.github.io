@@ -1,0 +1,9 @@
+<mat-nav-list>
+    @for (link of data.nav_list; track link) {
+        @if(link.value == 'logout'){
+            <a mat-list-item [routerLink]="['/auth/login']" (click)="openLink($event)" routerLinkActive="mdc-list-item--activated"><mat-icon matListItemIcon>{{link.icon}}</mat-icon>{{ link.label }}</a>
+        }@else {
+            <a mat-list-item [routerLink]="['/employer/settings', link.routerLink]" (click)="openLink($event)"  routerLinkActive="mdc-list-item--activated"><mat-icon matListItemIcon>{{link.icon}}</mat-icon>{{ link.label }}</a>
+        }
+    }
+</mat-nav-list>

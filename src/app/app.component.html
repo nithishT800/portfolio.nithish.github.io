@@ -1,14 +1,16 @@
-<mat-drawer-container hasBackdrop="true">
-    <mat-drawer [opened]="isSidebarOpen" mode="over" position="start" (closedStart)="closeSidebar()">
-        <mat-toolbar class="p-0 sidebar-nav-bar">
-            <div class="flex align-items-center justify-content-between w-full px-3 ">
-                <div>{{sidebar_title}}</div>
-                <div><button mat-icon-button aria-label="nav-icon-button" (click)="closeSidebar()"><mat-icon>close</mat-icon></button></div>
-            </div>
-        </mat-toolbar>
-        <sidebar [sidebar_key]="sidebar_key" [sidebar_data]="sidebar_data"></sidebar>
-    </mat-drawer>
-    <mat-drawer-content class="h-screen surface-ground">
-        <router-outlet></router-outlet>
-    </mat-drawer-content>
-</mat-drawer-container>
+@if(is_ready){
+    <mat-drawer-container hasBackdrop="true">
+        <mat-drawer [opened]="isSidebarOpen" mode="over" position="start" (closedStart)="closeSidebar()">
+            <mat-toolbar class="p-0 sidebar-nav-bar">
+                <div class="flex align-items-center justify-content-between w-full px-3 ">
+                    <div>{{sidebar_title}}</div>
+                    <div><button mat-icon-button aria-label="nav-icon-button" (click)="closeSidebar()"><mat-icon>close</mat-icon></button></div>
+                </div>
+            </mat-toolbar>
+            <sidebar [sidebar_key]="sidebar_key" [sidebar_data]="sidebar_data"></sidebar>
+        </mat-drawer>
+        <mat-drawer-content class="h-screen">
+            <router-outlet></router-outlet>
+        </mat-drawer-content>
+    </mat-drawer-container>
+}

@@ -28,12 +28,16 @@ export class LottieAnimationsComponent implements OnInit{
         if(this.context_key){
             switch(this.context_key){
                 case 'error_project_post':
+                case 'failure_hire_freelancer':
                     this.height = '8rem';
                     this.width = '8rem';
+                    console.log('loaded')
                     this.options = {path: 'animations/animation-error.json', loop:false}
                     this.animationItem?.play()
+                    console.log('loaded')
                 break;
                 case 'success_project_post':
+                case 'success_hire_freelancer':
                     this.height = '10rem';
                     this.width = '10rem';
                     this.options = {path: 'animations/animation-success.json', loop:false}

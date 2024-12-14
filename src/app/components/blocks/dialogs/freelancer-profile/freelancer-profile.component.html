@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>About Freelancer</h2>
+<mat-dialog-content>
+    <div class="flex flex-column gap-2">
+        <div class="flex justify-content-center">
+            <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" class="border-round h-12rem"/>
+        </div>
+        <div class="mat-title-large text-center">{{data.name}}</div>
+        <div class="mat-body-large text-center">{{data.freelancer_location}}</div>
+        <div class="flex align-items-center justify-content-center">
+            <mat-icon class="text-yellow-500">star</mat-icon>
+            <div class="mat-body-large">{{data.review_rating}} ({{data.review_rating_count}})</div>
+        </div>
+        <div class="mat-body-large flex justify-content-center">Avg.rate {{data.hourly_rate | currency : 'INR'}}/Hr</div>
+        <div class="mat-body-large">
+            <div class="mat-label-large">About</div>
+            {{data.freelancer_about}}
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Close</button>
+</mat-dialog-actions>

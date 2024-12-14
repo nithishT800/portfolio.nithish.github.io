@@ -1,34 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
 @include mat.core();
+@import "./assets/css/light.scss";
+@import "./assets/css/dark.scss";
 @import "primeflex/primeflex.css";
 @import 'primeflex/primeflex.scss';
 
-$theme: mat.define-theme((
+
+$font-family: 'Inter', 'Roboto', sans-serif;
+
+$light-theme: mat.define-theme((
     color: (
         theme-type: light,
         primary: mat.$azure-palette,
-        tertiary: mat.$azure-palette
+        //tertiary: mat.$blue-palette,
+        use-system-variables: true,
     ),
     density: (
-        scale: 0,
+        scale: -2,
     ),
     typography: (
-        plain-family: "'Inter Tight', sans-serif",
-        brand-family: "'Inter Tight', sans-serif",
+        plain-family: $font-family,
+        brand-family: $font-family,
         bold-weight: 900,
         medium-weight: 500,
         regular-weight: 400,
-        use-system-variables: true,
-        system-variables-prefix: true
+        // use-system-variables: true,
+        // system-variables-prefix: true
     ),
+));
+
+$dark-theme: mat.define-theme((
+    color: (
+        theme-type: dark,
+        primary: mat.$azure-palette,
+        use-system-variables: true,
+        //tertiary: mat.$blue-palette
+    ),
+    density: (
+        scale: -2,
+    ),
+    typography: (
+        plain-family: $font-family,
+        brand-family: $font-family,
+        bold-weight: 900,
+        medium-weight: 500,
+        regular-weight: 400,
+        // use-system-variables: true,
+        // system-variables-prefix: true
+    ),
+));
+
+
+
+$input-theme: mat.define-theme((
+    density: (
+        scale: -2
+    )
 ));
 
 :root {
     --text-color:#495057;
     --text-color-secondary:#6c757d;
     --border-radius:6px;
-    --primary-color:#3B82F6;
+    --primary-color:rgb(0 72 148);;
     --primary-color-text:#ffffff;
     --surface-ground:#f4f2ee;
     --surface-section:#ffffff;
@@ -177,44 +212,36 @@ $theme: mat.define-theme((
     --gray-700: #616161;
     --gray-800: #424242;
     --gray-900: #212121;
-    color-scheme: light;
-    font-family: 'Inter Tight', sans-serif;
-    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
-    @include mat.all-component-themes($theme);
-    @include mat.system-level-typography($theme);
-    @include mat.typography-hierarchy($theme);
-    @include mat.color-variants-backwards-compatibility($theme);
-}
-
-html, body { height: 100%; background-color: #f4f2ee;}
-body { margin: 0;}
-
-body a {
-    color: var(--primary-color, var(--mat-app-on-background));
-}
-
-.status-tag-base{
-
-    @include styleclass('mat-badge-content mat-badge-active');
+    color-scheme: light;   
     
 }
-.status-tag-active{
-    @include styleclass('bg-green-100 text-red-700');
+
+// .light-theme{
+//     @include mat.form-field-density(-3);
+    
+//     //@include mat.all-component-themes($light-theme);
+// }
+
+// .dark-theme{
+//     //@include mat.all-component-themes($dark-theme);
+    
+//     @include mat.all-component-colors($dark-theme);
+// }
+
+html, body { 
+    font-family: $font-family;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+    height: 100%; 
+    @include mat.all-component-themes($light-theme);
+    @include mat.form-field-density(-3);
+    @include mat.system-level-typography($light-theme);
+    @include mat.typography-hierarchy($light-theme);
+    @include mat.color-variants-backwards-compatibility($light-theme);
+}
+body { margin: 0;}
+
+
+body a {
+    color: var(--blue-500);
 }
 
-.status-tag-ended{
-    @include styleclass('bg-yellow-100');
-}
-
-
-.status-tag-completed{
-    @include styleclass('bg-blue-100');
-}
-
-.status-tag-cancelled{
-    @include styleclass('bg-red-100');
-}
-
-.status-tag-paid{
-    @include styleclass('bg-green-100');
-}

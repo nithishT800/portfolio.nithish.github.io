@@ -1,1 +1,26 @@
-<h1>Notifications</h1>
+<div class="mat-display-small">Notifications</div>
+<div class="grid">
+    <div class="col-12">
+        <mat-card appearance="outlined">
+            <mat-card-header class="flex flex-column-reverse md:flex-row justify-content-between">
+                <mat-card-title>({{unread_message_count}}) Unread notifications</mat-card-title>
+                <div class="flex justify-content-end"><a mat-button href="javascript:;" ><mat-icon>done_all</mat-icon>Mark all as read</a></div>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    @for(notification of notification_list; track notification){
+                        <mat-list-item class="mb-3">
+                            <img matListItemAvatar src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="img" height="40px">
+                            <div matListItemTitle [matTooltip]="notification.notification_title_text">{{notification.notification_title_text}}</div>
+                            <p matListItemLine>{{notification.notification_content_text}}</p>
+                            @if(!notification.notification_is_read){
+                                <div matListItemMeta><a mat-button href="javascript:;"><mat-icon>arrow_outward</mat-icon>{{notification.notification_link_text}}</a></div>
+                            }
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                    }
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

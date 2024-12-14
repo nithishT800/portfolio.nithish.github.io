@@ -1,0 +1,16 @@
+.sticky-layout{
+    position: sticky;
+    top: 90px;
+    transition: top 667ms ease-in-out;
+    height: fit-content;
+}
+
+
+.employer-setting-nav-list-button{
+    position: fixed;
+    z-index: 91;
+    bottom: 15px; 
+    right:0; 
+    left: calc(100% - 150px);
+
+}

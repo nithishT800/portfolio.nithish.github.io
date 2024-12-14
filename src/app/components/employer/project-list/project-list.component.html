@@ -1,7 +1,7 @@
 <!-- <h3>Projects</h3> -->
-<div class="mat-headline-medium">Projects</div>
+<div class="mat-display-small">Projects</div>
 <div class="grid">
-    <div class="hidden md:block col-3">
+    <div class="hidden md:block col-3 sticky-layout">
         <mat-card appearance="outlined">
             <mat-card-content>
                 <mat-nav-list>
@@ -12,26 +12,20 @@
             </mat-card-content>
         </mat-card>
     </div>
+    <div class="col-12 md:col-3 block md:hidden project-detail-nav-list-button"><button mat-fab extended (click)="showBottomNavMenu()"><mat-icon>list</mat-icon>Menu</button></div>
     <div class="col-12 md:col-6">
-        <!-- <div class="flex flex-column gap-3">
-            @for(item of items; track item){
-                <mat-card appearance="outlined">
-                    <mat-card-content>
-                        {{item}}
-                    </mat-card-content>
-                </mat-card>
-            }
-        </div> -->
-        <cdk-virtual-scroll-viewport itemSize="1" class="example-viewport">
-            <div class="flex flex-column gap-3">
-                <div *cdkVirtualFor="let project of project_list" >
+        <div class="flex flex-column gap-3">
+            @for(project of project_list; track project){
+                <div class="project-card-hover">
                     <mat-card appearance="outlined">
                         <mat-card-content>
                             <div class="flex flex-column gap-1">
-                                <div class="flex gap-2 align-items-center">
-                                    <div class="mat-title-large">{{project.project_name}}</div>
-                                    <div><status-tag [status]="project.project_status" [text]="project.project_status_text"></status-tag></div>
-                                    <button mat-icon-button><mat-icon>more_vert</mat-icon></button>
+                                <div class="flex justify-content-between align-items-center">
+                                    <div class="mat-title-large"><a [routerLink]="['/employer/project-detail/', project.project_number_uid, 'freelancers']" class="no-underline hover:underline">{{project.project_name}}</a></div>
+                                    <div class="flex align-items-center gap-2">
+                                        <div><status-tag [status]="project.project_status" [text]="project.project_status_text"></status-tag></div>
+                                        <button mat-icon-button [matMenuTriggerFor]="projectContextMenu"><mat-icon>more_vert</mat-icon></button>
+                                    </div>
                                 </div>
                                 <div class="mat-body-medium">{{project.project_dates}}</div>
                                 <div class="flex justify-content-between">
@@ -52,8 +46,8 @@
                         </mat-card-content>
                     </mat-card>
                 </div>
-            </div>
-        </cdk-virtual-scroll-viewport>
+            }
+        </div>
         <div class="py-3">
             <mat-paginator [length]="items.length"
               [pageSize]="10"
@@ -63,15 +57,25 @@
             </mat-paginator>
         </div>
     </div>
-    <div class="hidden md:block col-3">
+    <div class="hidden md:block col-3 sticky-layout">
         <mat-card appearance="outlined">
             <mat-card-content>
-                <mat-nav-list>
-                    @for (link of project_nav_links; track link) {
-                      <a mat-list-item [routerLink]="['/employer/projects', link.routerLink]" routerLinkActive="mdc-list-item--activated">{{ link.label }}</a>
-                    }
-                  </mat-nav-list>
+                <div class="mat-headline-medium">Filters</div>
+                <mat-form-field class="w-full" appearance="outline" >
+                    <mat-label>Search</mat-label>
+                    <input matInput placeholder="Search" class="py-0">
+                </mat-form-field>
+                <div><mat-label>Daily rate</mat-label></div>
+                <mat-slider min="200" max="500">
+                    <input value="300" matSliderStartThumb>
+                    <input value="400" matSliderEndThumb>
+                </mat-slider> 
             </mat-card-content>
         </mat-card>
     </div>
 </div>
+
+<mat-menu #projectContextMenu="matMenu">
+    <a mat-menu-item [routerLink]="['/employer/create-project', 'detail']"><mat-icon>edit</mat-icon>Edit</a>
+    <a mat-menu-item (click)="deleteProject()"><mat-icon class="text-red-500">delete</mat-icon>Delete</a>
+</mat-menu>

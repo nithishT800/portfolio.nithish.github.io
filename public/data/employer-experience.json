@@ -1,0 +1,58 @@
+[
+    {
+      "position_title": "Software Engineer",
+      "company_name": "Google",
+      "timeline": "March, 2021 - April 2024",
+      "year_in_text": "2 Years",
+      "description": "Worked on developing and maintaining web applications using React and Node.js. Contributed to the design and implementation of new features. Participated in code reviews and collaborated with cross-functional teams."
+    },
+    {
+      "position_title": "Junior Developer",
+      "company_name": "Microsoft",
+      "timeline": "May 2019 - February 2021",
+      "year_in_text": "1 Year 9 Months",
+      "description": "Gained experience in web development using HTML, CSS, and JavaScript. Worked on small-scale projects and learned from senior developers."
+    },
+    {
+      "position_title": "Intern",
+      "company_name": "Amazon",
+      "timeline": "June 2018 - August 2018",
+      "year_in_text": "3 Months",
+      "description": "Completed a summer internship and gained exposure to software development principles and methodologies."
+    },
+    {
+      "position_title": "Project Manager",
+      "company_name": "Apple",
+      "timeline": "October 2024 - Present",
+      "year_in_text": "Current",
+      "description": "Lead cross-functional teams to deliver complex software projects on time and within budget. Manage project resources, track progress, and communicate with stakeholders."
+    },
+    {
+      "position_title": "Data Analyst",
+      "company_name": "Netflix",
+      "timeline": "May 2023 - September 2024",
+      "year_in_text": "1 Year 5 Months",
+      "description": "Utilized data analysis tools to extract insights from large datasets. Developed data visualizations and reports to support business decision-making."
+    },
+    {
+      "position_title": "Technical Writer",
+      "company_name": "Adobe",
+      "timeline": "January 2022 - April 2023",
+      "year_in_text": "1 Year 3 Months",
+      "description": "Created technical documentation, including user manuals, tutorials, and API reference guides. Ensured that documentation was accurate, clear, and easy to understand."
+    },
+    {
+      "position_title": "Product Owner",
+      "company_name": "Tesla",
+      "timeline": "July 2021 - December 2022",
+      "year_in_text": "1 Year 6 Months",
+      "description": "Defined product vision and roadmap. Collaborated with development teams to prioritize features and ensure product alignment with business goals."
+    },
+    {
+      "position_title": "QA Engineer",
+      "company_name": "Oracle",
+      "timeline": "May 2017 - April 2019",
+      "year_in_text": "1 Year 11 Months",
+      "description": "Designed and executed test cases to identify and report defects. Worked closely with development teams to ensure product quality."
+    }
+  ]

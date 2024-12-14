@@ -1,5 +1,8 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
 .example-viewport {
-    height: calc(100vh - 300px);
+    height: 1600px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -10,3 +13,27 @@
   .example-item {
     height: 50px;
   }
+
+  .sticky-layout{
+    position: sticky;
+    top: 90px;
+    transition: top 667ms ease-in-out;
+    height: fit-content;
+}
+
+
+  .project-card-hover:hover .mat-mdc-card{
+    transform: scale(1.05) !important;
+    transition: transform 300ms ease-in-out !important;
+    z-index: 90;
+    filter: grayscale(0%) drop-shadow(0 6px 6px rgba(0, 0, 0, 0.2));
+  }
+
+  .project-detail-nav-list-button{
+    position: fixed;
+    z-index: 91;
+    bottom: 15px; 
+    right:0; 
+    left: calc(100% - 150px);
+
+}

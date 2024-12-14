@@ -1,0 +1,43 @@
+    .messages-section-layout{
+        height: calc(100vh - 220px);
+    }
+    .example-viewport {
+        height: calc(100vh - 320px);
+        width: 100%;
+    }
+
+    .unread-messages{
+        height: 1rem;
+        width: 1rem;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        color: white !important;
+        text-align: center;
+    }
+
+    .chat-header-image {
+        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+        background-size: cover;
+    }
+
+    .receiver-message-pill{
+        align-self: flex-start;
+        background-color: var(--sys-surface-variant);
+        border-radius: 1px 55px 55px 55px;
+        padding: 4px 20px 4px 10px;
+        //text-align: center;
+        color: var(--sys-on-surface-variant);
+        width: fit-content;
+        max-width: 70%;
+    }
+
+    .sender-message-pill{
+        align-self: flex-end;
+        background-color: var(--sys-surface-variant);
+        border-radius: 55px 1px 55px 55px;
+        padding: 4px 8px 4px 20px;
+        //text-align: center;
+        color: var(--sys-on-surface-variant);
+        width: fit-content;
+        max-width: 70%;
+    }

@@ -109,12 +109,14 @@ export class CreateProjectComponent implements OnInit{
 
     onSubmit(){
 
-        this.common.showMessageDialog('project_created');
+        //this.common.showMessageDialog('project_created');
+        this.common.setLoading();
 
         let form = Object.assign(this.project_form, this.create_project_form.project_basic_detail.value, this.create_project_form.project_payment_detail.value, this.create_project_form.project_terms_and_conditions.value);
         //this.common.log(this.create_project_form.project_basic_detail.valid, 'this.create_project_form.project_basic_detail')
 
         if(this.create_project_form.project_basic_detail.valid && this.create_project_form.project_payment_detail.valid && this.create_project_form.project_terms_and_conditions.valid){
+            /*
             this.data.fetch('create_project', form).subscribe((response:any) => {
                 setTimeout(() => {
                     this.common.closeMessageDialog();
@@ -129,6 +131,14 @@ export class CreateProjectComponent implements OnInit{
                     },700)
                 }
             })
+                */
+            setTimeout(() => {
+                this.common.unsetLoading();
+            },2300);
+            setTimeout(() => {
+                this.common.showMessageDialog('project_post_success');
+            },1000);
+           
         }else{
             ['project_basic_detail', 'project_payment_detail', 'project_terms_and_conditions'].forEach((key) => this.markFormAsRead(this.create_project_form[key]))
 
@@ -255,5 +265,14 @@ export class CreateProjectComponent implements OnInit{
     contractMaxDate(date:any){
         //this.common.log(date, 'date')
         return ''
+    }
+
+    setLoading(){
+        this.common.setLoading();
+        console.log('here the problem')
+        setTimeout(() => {
+            this.common.unsetLoading();
+            console.log('here the lies problem')
+        }, 1500)
     }
 }

@@ -71,7 +71,7 @@ export class DataService {
     }
 
     getSkills(){
-        return this.http.get('json/skills.json').pipe(
+        return this.http.get('data/skills.json').pipe(
             map(response => {
                 return response
             }),

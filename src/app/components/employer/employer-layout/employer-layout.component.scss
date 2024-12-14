@@ -1,6 +1,6 @@
 .nav-bar{
     box-shadow: var(--mat-app-elevation-shadow-level-1);
-    margin-bottom: 1.5rem !important;
+    //margin-bottom: 1.5rem !important;
 }
 
 .nav-bar-container{
@@ -14,7 +14,7 @@
 }
 
 .active-nav-link{
-    background-color: #dae2f9 !important;
+    background-color: var(--active-link-color) !important;//#dae2f9 !important;
 }
 
 /* For screens smaller than 600px */
@@ -60,8 +60,4 @@
         padding-right: 16rem !important;
         padding-top: 4rem;
     }
-}
-
-.active-nav-link{
-    background-color: var(--mat);
 }

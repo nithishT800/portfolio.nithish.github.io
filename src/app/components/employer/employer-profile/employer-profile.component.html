@@ -1,0 +1,228 @@
+<div class="grid">
+    <!-- <div class="col-12">
+        <mat-card appearance="outlined">
+            <mat-card-header><mat-card-title class="mb-3">Your info</mat-card-title></mat-card-header>
+            <mat-card-content>
+                <div class="grid">
+                    <div class="col-12 md:col-3 ">
+                        <div class="flex flex-column gap-3 align-items-center">
+                            <img class="border-round w-full" src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+                            <div class="flex align-items-center gap-1" matTooltip="Your profile is verified and is active">
+                                <div class="mat-title-large">Active</div>
+                                <mat-icon><span class="material-symbols-outlined text-green-500">verified</span></mat-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 md:col-9">
+                        <div class="formgrid grid">
+                            <mat-form-field appearance="outline" class="field col-12 md:col-6">
+                                <mat-label>First name</mat-label>
+                                <input matInput placeholder="First name" value="Foo">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="field col-12 md:col-6">
+                                <mat-label>Last name</mat-label>
+                                <input matInput placeholder="Last name" value="Bar">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="field col-12">
+                                <mat-label>Email</mat-label>
+                                <input matInput placeholder="Email" value="Foo.Bar@email.com">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="field col-12 md:col-6">
+                                <mat-label>Phone number</mat-label>
+                                <span matTextPrefix>+91 &nbsp;</span>
+                                <input matInput placeholder="Phone number" value="9876543210">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="field col-12 md:col-6">
+                                <mat-label>Gender</mat-label>
+                                <mat-select value="male">
+                                    <mat-option value="male">Male</mat-option>
+                                    <mat-option value="female">Female</mat-option>
+                                    <mat-option value="decline">Decline</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="formgrid grid">
+                            <mat-form-field appearance="outline" class="field col-12 md:col-4">
+                                <mat-label>Address 1</mat-label>
+                                <input matInput placeholder="Address 1" value="Shalivahana Nagar Road No.1">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="field col-12 md:col-4">
+                                <mat-label>Address 2</mat-label>
+                                <input matInput placeholder="Address 2" value="Dilsukhnagar">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="field col-12 md:col-4">
+                                <mat-label>City</mat-label>
+                                <input matInput placeholder="City" value="Hyderabad">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="field col-12 md:col-6">
+                                <mat-label>Pin code</mat-label>
+                                <input matInput placeholder="Pin code" value="500060">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="field col-12 md:col-6">
+                                <mat-label>Country</mat-label>
+                                <mat-select value="india">
+                                    <mat-option value="india">India</mat-option>
+                                    <mat-option value="other">Other</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button mat-flat-button >Save</button>
+            </mat-card-actions>
+        </mat-card>
+    </div> -->
+    <div class="col-12">
+        <mat-card appearance="outlined">
+            <mat-card-header class="justify-content-between mb-3">
+                <mat-card-title >Your info</mat-card-title>
+                <div class="flex align-items-center gap-1 justify-content-end" matTooltip="Your profile is verified and is active">
+                    <div class="mat-title-large">Active</div>
+                    <mat-icon><span class="material-symbols-outlined text-green-500">verified</span></mat-icon>
+                </div>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="grid">
+                    <div class="col-12 md:col-3 flex gap-3">
+                        <div>
+                            <div class="flex flex-column gap-3 align-items-center mb-3">
+                                <img class="border-round w-full" src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+                            </div>
+                            <mat-divider></mat-divider>
+                            <div class="flex">
+                                <mat-nav-list>
+                                    @for (link of profile_nav_list; track link) {
+                                        <a mat-list-item [routerLink]="['/employer/settings/profile/', link.routerLink]" routerLinkActive="mdc-list-item--activated">
+                                            {{ link.label }}
+                                        </a>
+                                    }
+                                </mat-nav-list>
+                            </div>
+                        </div>
+                        <mat-divider vertical="true" class="h-full hidden md:block"></mat-divider>
+                    </div>
+                    <div class="col-12 md:col-9">
+                        @switch (params.section) {
+                            @case ('contact'){
+                                <div class="formgrid grid">
+                                    <mat-form-field appearance="outline" class="field col-12 md:col-6">
+                                        <mat-label>First name</mat-label>
+                                        <input matInput placeholder="First name" value="Foo">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" class="field col-12 md:col-6">
+                                        <mat-label>Last name</mat-label>
+                                        <input matInput placeholder="Last name" value="Bar">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" class="field col-12">
+                                        <mat-label>Email</mat-label>
+                                        <input matInput placeholder="Email" value="Foo.Bar@email.com">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" class="field col-12 md:col-6">
+                                        <mat-label>Phone number</mat-label>
+                                        <span matTextPrefix>+91 &nbsp;</span>
+                                        <input matInput placeholder="Phone number" value="9876543210">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" class="field col-12 md:col-6">
+                                        <mat-label>Gender</mat-label>
+                                        <mat-select value="male">
+                                            <mat-option value="male">Male</mat-option>
+                                            <mat-option value="female">Female</mat-option>
+                                            <mat-option value="decline">Decline</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" class="field col-12 md:col-4">
+                                        <mat-label>Address 1</mat-label>
+                                        <input matInput placeholder="Address 1" value="Shalivahana Nagar Road No.1">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" class="field col-12 md:col-4">
+                                        <mat-label>Address 2</mat-label>
+                                        <input matInput placeholder="Address 2" value="Dilsukhnagar">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" class="field col-12 md:col-4">
+                                        <mat-label>City</mat-label>
+                                        <input matInput placeholder="City" value="Hyderabad">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" class="field col-12 md:col-6">
+                                        <mat-label>Pin code</mat-label>
+                                        <input matInput placeholder="Pin code" value="500060">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" class="field col-12 md:col-6">
+                                        <mat-label>Country</mat-label>
+                                        <mat-select value="india">
+                                            <mat-option value="india">India</mat-option>
+                                            <mat-option value="other">Other</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="flex justify-content-end">
+                                    <button mat-flat-button>Save</button>
+                                </div>
+                            }@case('skills'){
+                                <div>
+                                    <mat-form-field appearance="outline" class="w-full mt-3">
+                                        <mat-label for="project_skill_name">Select skills</mat-label>
+                                        <mat-chip-grid #chipGrid aria-label="Fruit selection" [ngClass]="{'mb-3': selected_filter_skills.length > 0}" >
+                                            @for (skill of selected_filter_skills; track $index) {
+                                                <mat-chip-row (removed)="removeSkill(skill)">
+                                                {{skill.skill_name}}
+                                                <button matChipRemove [attr.aria-label]="'remove ' + skill.skill_value">
+                                                    <mat-icon>cancel</mat-icon>
+                                                </button>
+                                                </mat-chip-row>
+                                            }
+                                        </mat-chip-grid>
+                                        <input
+                                            type="text"
+                                            name="project_skill_name"
+                                            id="project_skill_name"
+                                            placeholder="Enter skill..."
+                                            #fruitInput
+                                            pInputText 
+                                            [matChipInputFor]="chipGrid"
+                                            [matAutocomplete]="auto"
+                                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                            (matChipInputTokenEnd)="selectedSkill($event)"
+                                            (input)="searchSkill($event)"
+                                            />
+                                            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedSkill($event)">
+                                            @for (skill of skill_list; track $index) {
+                                                <mat-option name="skill_value" [value]="skill.skill_value">{{skill.skill_name}}</mat-option>
+                                            }
+                                            </mat-autocomplete>
+                                    </mat-form-field>
+                                </div>
+                            }@case('experience'){
+                                <div class="flex flex-column gap-2 ">
+                                    <div class="flex justify-content-end mb-3"><button mat-stroked-button><mat-icon>add</mat-icon>Add</button></div>
+                                    <mat-divider></mat-divider>
+                                    <div class="flex flex-column gap-2">
+                                        <mat-list lines="4">
+                                            @for(work of work_experience; track work){
+                                                <mat-list-item class="mb-3">
+                                                    <span matListItemTitle>{{work.position_title}} at {{work.company_name}}</span>
+                                                    <span matListItemLine >{{work.timeline}} ({{work.year_in_text}})</span>
+                                                    {{work.description}}
+                                                    <div matListItemMeta><a mat-button href="javascript:;"><mat-icon>edit</mat-icon>Edit</a></div>
+                                                </mat-list-item>
+                                                <mat-divider class="mb-3"></mat-divider>
+                                            }
+                                        </mat-list>  
+                                    </div>
+                                </div>
+                            }@case('documents'){
+                                <div class="flex justify-content-center align-items-center ">
+                                    <mat-icon>construction</mat-icon>
+                                    Under Development.
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

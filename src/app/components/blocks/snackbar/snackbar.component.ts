@@ -29,6 +29,41 @@ export class SnackbarComponent {
             case 'message_login_wrong_credentials':
                 this.message = 'Please enter credentials.'
             break;
+            case 'message_register_success':
+                this.message = 'Success'
+            break;
+            case 'message_register_failure':
+                this.message = 'Failed! Please enter correct Email or Password.'
+            break;
+            case 'message_register_wrong_credentials':
+                this.message = 'Please enter credentials.'
+            break;
+            case 'favorite_freelancer':
+                this.message = 'Liked freelancer profile'
+            break;
+            case 'request_freelancer':
+                this.message = 'Requested freelancer for the project.'
+            break;
+            case 'error_employer_payment_card_selection':
+                this.message = 'Please select a card for payment!'
+            break;
+            case 'delete_project':
+                this.message = 'Deleted the project'
+            break;
+            case 'changed_primary_card':
+                this.message = "Marked card as primary"
+            break;
+            case 'edit_credit_card':
+                this.message = "Updated card successfully"
+            break;
+            case 'added_credit_card':
+                this.message = "Added card successfully"
+            break;
+            case 'error_in_credit_card':
+                this.message = "Please fill the details properly"
+            break;
+            
+
         }
     }
 }

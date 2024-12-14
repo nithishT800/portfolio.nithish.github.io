@@ -1,0 +1,6 @@
+.credit-card-hover:hover .mat-mdc-card{
+    transform: scale(1.05) !important;
+    transition: transform 300ms ease-in-out !important;
+    z-index: 90;
+    filter: grayscale(0%) drop-shadow(0 6px 6px rgba(0, 0, 0, 0.2));
+}

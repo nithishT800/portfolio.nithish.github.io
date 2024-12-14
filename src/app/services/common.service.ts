@@ -1,8 +1,11 @@
 import { inject, Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 import { MessageComponent } from '../components/blocks/message/message.component';
 import { environment } from '../../environments/environment';
+import { LoadingComponent } from '../components/blocks/loading/loading.component';
+import { LayoutService } from './layout.service';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +13,24 @@ import { environment } from '../../environments/environment';
 export class CommonService {
     readonly dialog = inject(MatDialog);
     private _snackBar = inject(MatSnackBar);
-    constructor() { }
+    //readonly dialogRef = inject(MatDialogRef<LoadingComponent>);
+    //private dialogRefs = new Map<string, MatDialogRef<LoadingComponent>>();
+    private closeDialog = new Subject<boolean>();
+    event$: Observable<boolean> = this.closeDialog.asObservable();
+    constructor(private layout:LayoutService) { }
 
     isResponseSuccess(response:any){
-        if(response.success === 'true' || response.success === true || response.success === 1 || response.success === '1'){
+        if(this.isTrue(response.success)){
             return true;
-        }else{
-            return false;
         }
+        return false;
+    }
+
+    isTrue(data:any){
+        if(data === 'true' || data === true || data === 1 || data === '1'){
+            return true;
+        }
+        return false;
     }
 
     showResponseMessage(response:any, action:string = ''){
@@ -58,4 +71,63 @@ export class CommonService {
             console.log(data);
         }
     }
+
+    setLoading(){
+        const dialogRef = this.dialog.open(LoadingComponent, {
+            data: {},
+            disableClose: true
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            if (result !== undefined) {
+            
+            }
+        });
+    }
+
+    unsetLoading(){
+        console.log('triggered')
+        this.closeDialog.next(true);
+    }
+
+
+    closeLoading(dialogRef:any){
+        dialogRef.close();
+    }
+
+    canShowDisclaimer(){
+        if(this.layout.isBrowser()){
+            if(typeof localStorage !== 'undefined'){
+                let has_disclaimer =  localStorage.getItem('seen_disclaimer');
+                if(!this.isTrue(has_disclaimer)){
+                    localStorage.setItem('seen_disclaimer', 'true');
+                    return true;
+                }else{console.log(has_disclaimer, 'has_disclaimer')
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+
+    isObjectEmpty($object:Object):boolean{
+        
+        return (Object.keys($object).length) ? false : true; 
+    }  
+
+    objectHas($object:any, $find:string):boolean{
+
+        if(Object.keys($object).length){
+
+            for(let item in $object){
+
+                return ($object[$find]) ? true : false
+            }
+        }
+
+        return false;
+
+    }
+
 }

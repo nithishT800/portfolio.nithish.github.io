@@ -1,91 +1,92 @@
 <div class="project-form">
-    <div><h1>Create project</h1></div>
+    <div class="mat-display-small">Create project</div>
     <mat-stepper orientation="vertical" [linear]="false" #stepper>
         <mat-step [stepControl]="create_project_form.project_basic_detail">
             <form [formGroup]="create_project_form.project_basic_detail">
                 <ng-template matStepLabel>Project details</ng-template>
                 <div class="mt-3">
-                    <form [formGroup]="create_project_form.project_basic_detail" (ngSubmit)="onSubmit()">
-                        <mat-form-field appearance="outline" class="w-full">
-                            <mat-label>Project name</mat-label>
-                            <input matInput placeholder="Project name" formControlName="project_name" required>
-                        </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-full">
+                        <mat-label for="project_name">Project name</mat-label>
+                        <input matInput type="text" for="project_name" placeholder="Project name" formControlName="project_name" required>
+                    </mat-form-field>
 
-                        <div class="flex align-items-center gap-2 flex-md-row flex-column">
-                            <mat-form-field appearance="outline" class="w-full">
-                                <mat-label>Choose start date</mat-label>
-                                <input matInput [matDatepicker]="project_start_date" [min]="min_date" [max]="max_date" formControlName="project_start_date">
-                                <mat-hint>MM/DD/YYYY</mat-hint>
-                                <mat-datepicker-toggle matIconSuffix [for]="project_start_date"></mat-datepicker-toggle>
-                                <mat-datepicker #project_start_date></mat-datepicker>
-                            </mat-form-field>
-                            <mat-form-field appearance="outline" class="w-full">
-                                <mat-label>Choose end date</mat-label>
-                                <input matInput [matDatepicker]="project_end_date" [min]="create_project_form.project_basic_detail.value.project_start_date" [max]="max_date" formControlName="project_end_date">
-                                <mat-hint>MM/DD/YYYY</mat-hint>
-                                <mat-datepicker-toggle matIconSuffix [for]="project_end_date"></mat-datepicker-toggle>
-                                <mat-datepicker #project_end_date></mat-datepicker>
-                            </mat-form-field>
-                        </div>
-                        <div>
-                            <mat-form-field appearance="outline" class="w-full mt-3">
-                                <mat-label>Select skills</mat-label>
-                                <mat-chip-grid #chipGrid aria-label="Fruit selection" [ngClass]="{'mb-3': selected_filter_skills.length > 0}" formControlName="project_skills">
-                                    @for (skill of selected_filter_skills; track $index) {
-                                        <mat-chip-row (removed)="removeSkill(skill)">
-                                        {{skill.skill_name}}
-                                        <button matChipRemove [attr.aria-label]="'remove ' + skill.skill_value">
-                                            <mat-icon>cancel</mat-icon>
-                                        </button>
-                                        </mat-chip-row>
-                                    }
-                                </mat-chip-grid>
-                                <input
-                                    name="project_skill_name"
-                                    placeholder="Enter skill..."
-                                    #fruitInput
-                                    pInputText 
-                                    [matChipInputFor]="chipGrid"
-                                    [matAutocomplete]="auto"
-                                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                                    (matChipInputTokenEnd)="selectedSkill($event)"
-                                    (input)="searchSkill($event)"
-                                    />
-                                    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedSkill($event)">
-                                    @for (skill of skill_list; track $index) {
-                                        <mat-option name="skill_value" [value]="skill.skill_value">{{skill.skill_name}}</mat-option>
-                                    }
-                                    </mat-autocomplete>
-                            </mat-form-field>
-                        </div>
-                        <div class="field">
-                            <label class="mat-label-large">Want the freelancer from a specific location ?</label>
+                    <div class="flex align-items-center gap-3 flex-column md:flex-row">
+                        <mat-form-field appearance="outline" class="w-full">
+                            <mat-label>Choose start date</mat-label>
+                            <input matInput type="text" [matDatepicker]="project_start_date" [min]="min_date" [max]="max_date" formControlName="project_start_date">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="project_start_date"></mat-datepicker-toggle>
+                            <mat-datepicker #project_start_date></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="w-full">
+                            <mat-label>Choose end date</mat-label>
+                            <input matInput type="text" [matDatepicker]="project_end_date" [min]="create_project_form.project_basic_detail.value.project_start_date" [max]="max_date" formControlName="project_end_date">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="project_end_date"></mat-datepicker-toggle>
+                            <mat-datepicker #project_end_date></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline" class="w-full mt-3">
+                            <mat-label for="project_skill_name">Select skills</mat-label>
+                            <mat-chip-grid #chipGrid aria-label="Fruit selection" [ngClass]="{'mb-3': selected_filter_skills.length > 0}" formControlName="project_skills">
+                                @for (skill of selected_filter_skills; track $index) {
+                                    <mat-chip-row (removed)="removeSkill(skill)">
+                                    {{skill.skill_name}}
+                                    <button matChipRemove [attr.aria-label]="'remove ' + skill.skill_value">
+                                        <mat-icon>cancel</mat-icon>
+                                    </button>
+                                    </mat-chip-row>
+                                }
+                            </mat-chip-grid>
+                            <input
+                                type="text"
+                                name="project_skill_name"
+                                id="project_skill_name"
+                                placeholder="Enter skill..."
+                                #fruitInput
+                                pInputText 
+                                [matChipInputFor]="chipGrid"
+                                [matAutocomplete]="auto"
+                                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                (matChipInputTokenEnd)="selectedSkill($event)"
+                                (input)="searchSkill($event)"
+                                />
+                                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedSkill($event)">
+                                @for (skill of skill_list; track $index) {
+                                    <mat-option name="skill_value" [value]="skill.skill_value">{{skill.skill_name}}</mat-option>
+                                }
+                                </mat-autocomplete>
+                        </mat-form-field>
+                    </div>
+                    <div class="field">
+                        <label class="mat-label-large">Want the freelancer from a specific location ?
                             <div>
                                 <mat-radio-group aria-label="Select an option" formControlName="project_freelancer_location_is_specific">
                                     <mat-radio-button  value='true'>Yes</mat-radio-button>
                                     <mat-radio-button  value='false'>No</mat-radio-button>
                                 </mat-radio-group>
                             </div>
-                        </div>
-                        @if(create_project_form.project_basic_detail.value.project_freelancer_location_is_specific == 'true'){
-                            <mat-form-field appearance="outline" class="w-full" >
-                                <mat-label>Search location</mat-label>
-                                <input type="text"
-                                       placeholder="Pick one"
-                                       aria-label="Number"
-                                       matInput
-                                       formControlName="project_freelancer_location"
-                                       [matAutocomplete]="auto"
-                                       (input)="searchCities($event)"
-                                       >
-                                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                                  @for (option of cities_list; track option) {
-                                    <mat-option [value]="[option.city_name +  ', ' + option.country_name]">{{option.city_name}}, {{option.country_name}}</mat-option>
-                                }
-                                </mat-autocomplete>
-                            </mat-form-field>
-                        }
-                    </form>
+                        </label>
+                    </div>
+                    @if(create_project_form.project_basic_detail.value.project_freelancer_location_is_specific == 'true'){
+                        <mat-form-field appearance="outline" class="w-full" >
+                            <mat-label>Search location</mat-label>
+                            <input type="text"
+                                    placeholder="Pick one"
+                                    aria-label="Number"
+                                    matInput
+                                    formControlName="project_freelancer_location"
+                                    [matAutocomplete]="auto"
+                                    (input)="searchCities($event)"
+                                    >
+                            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                @for (option of cities_list; track option) {
+                                <mat-option [value]="[option.city_name +  ', ' + option.country_name]">{{option.city_name}}, {{option.country_name}}</mat-option>
+                            }
+                            </mat-autocomplete>
+                        </mat-form-field>
+                    }
                 </div>
                 <div class="flex justify-content-end gap-3 mt-2">
                     <button type="submit" mat-flat-button matStepperNext>Next</button>
@@ -135,11 +136,11 @@
                             </div> -->
                             <mat-list>
                                 <div mat-subheader>Summary</div>
-                                <mat-list-item><label class="mat-label-large">Total Days: </label> {{getContractTotalDays()}}</mat-list-item>
+                                <mat-list-item><span class="mat-label-large">Total Days: </span> {{getContractTotalDays()}}</mat-list-item>
                                 <mat-divider></mat-divider>
-                                <mat-list-item><label class="mat-label-large">Total Hours: </label> {{getContractTotalHours()}}</mat-list-item>
+                                <mat-list-item><span class="mat-label-large">Total Hours: </span> {{getContractTotalHours()}}</mat-list-item>
                                 <mat-divider></mat-divider>
-                                <mat-list-item><label class="mat-label-large">Total Contract Budget: </label> {{calculateContractBudget() | currency : 'INR'}} (Hours × Amount)</mat-list-item>
+                                <mat-list-item><span class="mat-label-large">Total Contract Budget: </span> {{calculateContractBudget() | currency : 'INR'}} (Hours × Amount)</mat-list-item>
                             </mat-list>
                         }
                     }
@@ -161,59 +162,59 @@
                                 <div class="field text-center"><h3 >Contract Policy</h3></div>
                                 <ul class="list-decimal line-height-3">
                                     <li>
-                                        <label class="mat-label-large">Introduction: </label>
+                                        <span class="mat-label-large">Introduction: </span>
                                         <span class="mat-body-medium"> This policy outlines the terms and conditions for hiring freelancers to ensure a clear understanding between the hiring company and the freelancer.</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Scope of Work: </label>
+                                        <span class="mat-label-large">Scope of Work: </span>
                                         <span class="mat-body-medium"> The freelancer agrees to perform the tasks outlined in the project description provided by the hiring company. Any changes to the scope of work must be agreed upon in writing by both parties.</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Payment Terms: </label>
+                                        <span class="mat-label-large">Payment Terms: </span>
                                         <ul class="line-height-3">
                                             <li>
-                                                <label class="mat-label-large">Rate: </label>
+                                                <span class="mat-label-large">Rate: </span>
                                                 <span class="mat-body-medium">The freelancer will be paid at a rate of [insert rate] per hour/project.</span>
                                             </li>
                                             <li>
-                                                <label class="mat-label-large">Payment Schedule: </label>
+                                                <span class="mat-label-large">Payment Schedule: </span>
                                                 <span class="mat-body-medium">Payments will be made upon completion of milestones or at the end of the project, as agreed upon.</span>
                                             </li>
                                             <li>
-                                                <label class="mat-label-large">Method of Payment: </label>
+                                                <span class="mat-label-large">Method of Payment: </span>
                                                 <span class="mat-body-medium">Payments will be made via [insert payment method, e.g., bank transfer, PayPal].</span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Confidentiality: </label>
+                                        <span class="mat-label-large">Confidentiality: </span>
                                         <span class="mat-body-medium"> The freelancer agrees to keep all information related to the project confidential and not to disclose any information to third parties without the hiring company’s written consent.</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Intellectual Property: </label>
+                                        <span class="mat-label-large">Intellectual Property: </span>
                                         <span class="mat-body-medium"> All work produced by the freelancer for the hiring company will be the property of the hiring company. The freelancer agrees to transfer all rights, titles, and interests in the work to the hiring company upon payment.</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Termination: </label>
+                                        <span class="mat-label-large">Termination: </span>
                                         <span class="mat-body-medium"> Either party may terminate the contract with [insert notice period, e.g., 14 days] written notice. In the event of termination, the freelancer will be paid for all work completed up to the termination date.</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Dispute Resolution: </label>
+                                        <span class="mat-label-large">Dispute Resolution: </span>
                                         <span class="mat-body-medium"> Any disputes arising from this contract will be resolved through [insert method, e.g., mediation, arbitration] in accordance with the laws of [insert jurisdiction].</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Miscellaneous: </label>
+                                        <span class="mat-label-large">Miscellaneous: </span>
                                         <ul class="line-height-3">
                                             <li>
-                                                <label class="mat-label-large">Amendments: </label>
+                                                <span class="mat-label-large">Amendments: </span>
                                                 <span class="mat-body-medium"> Any amendments to this contract must be made in writing and signed by both parties.</span>
                                             </li>
                                             <li>
-                                                <label class="mat-label-large">Governing Law: </label>
+                                                <span class="mat-label-large">Governing Law: </span>
                                                 <span class="mat-body-medium"> This contract will be governed by the laws of [insert jurisdiction].</span>
                                             </li>
                                             <li>
-                                                <label class="mat-label-large">Entire Agreement: </label>
+                                                <span class="mat-label-large">Entire Agreement: </span>
                                                 <span class="mat-body-medium"> This contract constitutes the entire agreement between the parties and supersedes all prior agreements and understandings.</span>
                                             </li>
                                         </ul>
@@ -235,60 +236,60 @@
                                 <div class="field text-center"><h3 >Terms and Conditions </h3></div>
                                 <ul class="list-decimal line-height-3">
                                     <li>
-                                        <label class="mat-label-large">Introduction: </label>
+                                        <span class="mat-label-large">Introduction: </span>
                                         <span class="mat-body-medium"> These terms and conditions govern the contractual relationship between [Hiring Company] and [Freelancer Name] for the provision of freelance services.</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Scope of Work: </label>
+                                        <span class="mat-label-large">Scope of Work: </span>
                                         <span class="mat-body-medium"> The freelancer agrees to perform the tasks outlined in the project description provided by the hiring company. Any modifications to the scope of work must be agreed upon in writing by both parties.</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Payment Terms: </label>
+                                        <span class="mat-label-large">Payment Terms: </span>
                                         <ul class="line-height-3">
                                             <li>
-                                                <label class="mat-label-large">Rate: </label>
+                                                <span class="mat-label-large">Rate: </span>
                                                 <span class="mat-body-medium">The freelancer will be paid at a rate of [insert rate] per hour/project.</span>
                                             </li>
                                             <li>
-                                                <label class="mat-label-large">Payment Schedule: </label>
+                                                <span class="mat-label-large">Payment Schedule: </span>
                                                 <span class="mat-body-medium">Payments will be made upon completion of milestones or at the end of the project, as agreed upon.</span>
                                             </li>
                                             <li>
-                                                <label class="mat-label-large">Method of Payment: </label>
+                                                <span class="mat-label-large">Method of Payment: </span>
                                                 <span class="mat-body-medium">Payments will be made via [insert payment method, e.g., bank transfer, PayPal].</span>
                                             </li>
                                             <li>
-                                                <label class="mat-label-large">Expenses: </label>
+                                                <span class="mat-label-large">Expenses: </span>
                                                 <span class="mat-body-medium">Any expenses incurred by the freelancer must be pre-approved by the hiring company and will be reimbursed upon submission of receipts.</span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Confidentiality: </label>
+                                        <span class="mat-label-large">Confidentiality: </span>
                                         <span class="mat-body-medium"> The freelancer agrees to keep all information related to the project confidential and not to disclose any information to third parties without the hiring company’s written consent.</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Intellectual Property: </label>
+                                        <span class="mat-label-large">Intellectual Property: </span>
                                         <span class="mat-body-medium"> All work produced by the freelancer for the hiring company will be the property of the hiring company. The freelancer agrees to transfer all rights, titles, and interests in the work to the hiring company upon payment.</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Termination: </label>
+                                        <span class="mat-label-large">Termination: </span>
                                         <span class="mat-body-medium"> Either party may terminate the contract with [insert notice period, e.g., 14 days] written notice. In the event of termination, the freelancer will be paid for all work completed up to the termination date.</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Dispute Resolution: </label>
+                                        <span class="mat-label-large">Dispute Resolution: </span>
                                         <span class="mat-body-medium"> Any disputes arising from this contract will be resolved through [insert method, e.g., mediation, arbitration] in accordance with the laws of [insert jurisdiction].</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Amendments: </label>
+                                        <span class="mat-label-large">Amendments: </span>
                                         <span class="mat-body-medium"> Any amendments to this contract must be made in writing and signed by both parties.</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Governing Law: </label>
+                                        <span class="mat-label-large">Governing Law: </span>
                                         <span class="mat-body-medium"> This contract will be governed by the laws of [insert jurisdiction].</span>
                                     </li>
                                     <li>
-                                        <label class="mat-label-large">Entire Agreement: </label>
+                                        <span class="mat-label-large">Entire Agreement: </span>
                                         <span class="mat-body-medium"> This contract constitutes the entire agreement between the parties and supersedes all prior agreements and understandings.</span>
                                     </li>
                                 </ul>
@@ -304,13 +305,14 @@
                         <mat-expansion-panel class="custom-accordion" [expanded]="step() === 2" (opened)="setStep(2)">
                             <mat-expansion-panel-header>Miscellaneous</mat-expansion-panel-header>
                             <div class="field">
-                                <label class="mat-label-large">Do you have custom policy files to upload ?</label>
-                                <div>
-                                    <mat-radio-group aria-label="Select an option" formControlName="project_employer_has_policy_attachment">
-                                        <mat-radio-button value="true">Yes</mat-radio-button>
-                                        <mat-radio-button value="false">No</mat-radio-button>
-                                    </mat-radio-group>
-                                </div>
+                                <label class="mat-label-large">Do you have custom policy files to upload ?
+                                    <div>
+                                        <mat-radio-group aria-label="Select an option" formControlName="project_employer_has_policy_attachment">
+                                            <mat-radio-button value="true">Yes</mat-radio-button>
+                                            <mat-radio-button value="false">No</mat-radio-button>
+                                        </mat-radio-group>
+                                    </div>
+                                </label>
                             </div>
                             @if(create_project_form.project_terms_and_conditions.value.project_employer_has_policy_attachment === 'true'){
                                 <div class="field flex align-items-center gap-3" >

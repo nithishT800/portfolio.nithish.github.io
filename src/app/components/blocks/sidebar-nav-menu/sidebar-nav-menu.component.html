@@ -1,5 +1,5 @@
 <mat-nav-list >
     @for (item of nav_menu; track item) {
-      <a mat-list-item [routerLink]="['/employer/', item.routerLink]" routerLinkActive="mdc-list-item--activated" role="listitem">{{ item.label }}</a>
+      <a mat-list-item [routerLink]="['/employer/', item.routerLink]" routerLinkActive="mdc-list-item--activated" role="listitem" (click)="closeSidebar()">{{ item.label }}</a>
     }
 </mat-nav-list>

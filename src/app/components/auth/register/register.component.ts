@@ -9,6 +9,7 @@ import { Router, RouterLink } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 import { CommonService } from '../../../services/common.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { SnackbarComponent } from '../../blocks/snackbar/snackbar.component';
 @Component({
   selector: 'app-register',
   standalone: true,
@@ -34,16 +35,28 @@ export class RegisterComponent implements OnInit{
     }
 
     register(form:NgForm){
-        this.data.fetch('auth/register', this.credentials).subscribe((response:any) => {
-            if(this.common.isResponseSuccess(response)){
-                this.router.navigate(['/employer/dashboard'])
-            }else{
-                if(response.message.length){
-                    for(let message of response.message){
-                        this.common.showResponseMessage(message, '')
-                    }
-                }
-            }
-        })
+        // this.data.fetch('auth/register', this.credentials).subscribe((response:any) => {
+        //     if(this.common.isResponseSuccess(response)){
+        //         this.router.navigate(['/employer/dashboard'])
+        //     }else{
+        //         if(response.message.length){
+        //             for(let message of response.message){
+        //                 this.common.showResponseMessage(message, '')
+        //             }
+        //         }
+        //     }
+        // })
+        
+        if(form.valid){
+            this.common.setLoading();
+            setTimeout(() => {
+                //this.is_loading = true
+                this.common.unsetLoading();
+                this._snackBar.openFromComponent(SnackbarComponent, {data: 'message_register_success'});
+                this.router.navigate(['/auth/login'])
+            }, 1500)
+        }else{
+            this._snackBar.openFromComponent(SnackbarComponent, {data: 'message_register_wrong_credentials'});
+        }
     }
 }

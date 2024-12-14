@@ -1,1 +1,156 @@
-<p>project-detail works!</p>
+<div class="mat-display-small">Project detail</div>
+<!-- <breadcrumb /> -->
+@if(is_ready){
+    <div class="grid" >
+        <div class="col-12 md:col-3 sticky-layout">
+            <mat-card appearance="outlined" class="hidden md:block ">
+                <mat-card-content>
+                    <!-- <a mat-button matTooltip="Back to projects"><mat-icon>arrow_back</mat-icon></a> -->
+                    <mat-nav-list>
+                        <a [routerLink]="['/employer/projects', 'all']" mat-list-item role="listitem">
+                            <span matListItemTitle class="text-blue-500 hover:underline">Go Back</span>
+                        </a>
+                        @for (link of project_detail_nav_list; track link) {
+                          <a mat-list-item [routerLink]="['/employer/project-detail', params.project_id, link.routerLink]" routerLinkActive="mdc-list-item--activated">{{ link.label }}</a>
+                        }
+                    </mat-nav-list>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-12 md:col-3 block md:hidden project-detail-nav-list-button"><button mat-fab extended (click)="showBottomNavMenu()"><mat-icon>list</mat-icon>Menu</button></div>
+            @switch (params.section) {
+                @case ('freelancers'){
+                    <div class="col-12 md:col-6">
+                        <div class="grid">
+                            @for(freelancer of freelancer_list; track freelancer){
+                                <div class="col-12 md:col-6 freelancer-card-hover">
+                                    <mat-card appearance="outlined">
+                                        <mat-card-content>
+                                            <div class="flex flex-column gap-1">
+                                                <div class="flex justify-content-center mb-2">
+                                                    <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" class="h-10rem w-15rem border-round">
+                                                </div>
+                                                <div class="mat-title-large hover:underline text-blue-500 cursor-pointer" (click)="showFreelancerProfile(freelancer)">{{freelancer.name}}</div>
+                                                <div class="flex align-items-center gap-1">
+                                                    <div class="mat-body-large">{{freelancer.freelancer_location}}</div>
+                                                </div>
+                                                <div class="flex align-items-center">
+                                                    <mat-icon class="text-yellow-500">star</mat-icon>
+                                                    <div class="mat-body-large">{{freelancer.review_rating}} ({{freelancer.review_rating_count}} Reviews)</div>
+                                                </div>
+                                                <div class="flex justify-content-between align-items-center">
+                                                    <div class="flex justify-content-end align-items-center gap-2">
+                                                        <button mat-icon-button (click)="toggleFavorite(freelancer)" class="like-button" >
+                                                            <mat-icon [svgIcon]="(freelancer.is_favorite) ? 'heart-liked' : 'heart-not-liked'" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+                                                        </button>                                                        
+                                                        <!-- <button mat-icon-button (click)="toggleShortList(freelancer)" [color]="freelancer.is_shortlisted ? 'primary' : 'secondary'"><mat-icon>thumb_up</mat-icon></button> -->
+                                                    </div>
+                                                    <div>
+                                                        @if(freelancer.is_requested){
+                                                            <button mat-flat-button (click)="toggleRequestFreelancer(freelancer)">Requested</button>
+                                                        }@else{
+                                                            <button mat-button (click)="toggleRequestFreelancer(freelancer)">Request</button>
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div class="mat-label-small flex justify-content-end">Avg.rate {{freelancer.hourly_rate | currency : 'INR'}}/Hr</div>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            }
+                        </div>
+                        <div class="py-3">
+                            <mat-paginator [length]="freelancer_list.length"
+                            [pageSize]="10"
+                            [pageSizeOptions]="[5, 10, 25, 100]"
+                            aria-label="Select page">
+                            
+                            </mat-paginator>
+                        </div>
+                    </div>
+                }@case ('offers'){
+                    <div class="col-12 md:col-6">
+                        <div class="grid">
+                            @for(freelancer of offer_list; track freelancer){
+                                <div class="col-12 md:col-6 freelancer-card-hover">
+                                    <mat-card appearance="outlined">
+                                        <mat-card-content>
+                                            <div class="flex flex-column gap-1">
+                                                <div class="flex justify-content-center mb-2">
+                                                    <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" class="h-10rem w-15rem border-round">
+                                                </div>
+                                                <div class="mat-title-large hover:underline text-blue-500 cursor-pointer" (click)="showFreelancerProfile(freelancer)">{{freelancer.name}}</div>
+                                                <div class="flex align-items-center gap-1">
+                                                    <div class="mat-body-large">{{freelancer.freelancer_location}}</div>
+                                                </div>
+                                                <div class="flex align-items-center">
+                                                    <mat-icon class="text-yellow-500">star</mat-icon>
+                                                    <div class="mat-body-large">{{freelancer.review_rating}} ({{freelancer.review_rating_count}} Reviews)</div>
+                                                </div>
+                                                <div class="flex justify-content-between align-items-center">
+                                                    <div class="flex justify-content-end align-items-center gap-2">
+                                                        <button mat-icon-button (click)="toggleFavorite(freelancer)" class="like-button" >
+                                                            <mat-icon [svgIcon]="(freelancer.is_favorite) ? 'heart-liked' : 'heart-not-liked'" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+                                                        </button>
+                                                    </div>
+                                                    <div>
+                                                        <button mat-flat-button (click)="intiHireFreelancer(freelancer)">View {{freelancer.freelancer_contract_offer}} <mat-icon>arrow_outward</mat-icon></button>
+                                                    </div>
+                                                </div>
+                                                <div class="mat-label-small flex justify-content-end">Offer sent on {{freelancer.freelancer_contract_offer_sent_at }}</div>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            }
+                        </div>
+                        <div class="py-3">
+                            <mat-paginator [length]="freelancer_list.length"
+                            [pageSize]="10"
+                            [pageSizeOptions]="[5, 10, 25, 100]"
+                            aria-label="Select page">
+                            
+                            </mat-paginator>
+                        </div>
+                    </div>
+                }@case('terms-conditions'){
+                    <div class="col-12 md:col-9">
+                        <contract-policy-card/>
+                    </div>
+                }@case('policies'){
+                    <div class="col-12 md:col-9">
+                        <contract-term-conditions-card/>
+                    </div>
+                }@case('summary'){
+                    <div class="col-12 md:col-9">
+                        <contract-summary-card [project_detail]="project_detail"/>
+                    </div>
+                }
+            }
+            
+        @if(params.section == 'freelancers' || params.section == 'offers'){
+            <div class="hidden md:block col-3 sticky-layout">
+                <mat-card appearance="outlined">
+                    <mat-card-content>
+                        <div class="mat-title-large mb-3">Filters</div>
+                        <mat-form-field class="w-full" appearance="outline" >
+                            <mat-label>Search freelancer</mat-label>
+                            <input matInput placeholder="Search freelancer" class="py-0">
+                        </mat-form-field>
+                        <div><mat-label>Gender</mat-label></div>
+                        <mat-radio-group aria-label="Select an option">
+                            <mat-radio-button value="1">Male</mat-radio-button>
+                            <mat-radio-button value="2">Female</mat-radio-button>
+                        </mat-radio-group>
+                        <div><mat-label>Hourly rate</mat-label></div>
+                        <mat-slider min="200" max="500">
+                            <input value="300" matSliderStartThumb>
+                            <input value="400" matSliderEndThumb>
+                        </mat-slider> 
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        }
+    </div>
+}

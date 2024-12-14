@@ -7,7 +7,8 @@
       "expiry_year": "25",
       "expiry_year_month": "12/25",
       "card_holder_name": "John Doe",
-      "cvv": "123"
+      "cvv": "123",
+      "is_primary": false
     },
     {
       "brand": "MasterCard",
@@ -17,7 +18,8 @@
       "expiry_year": "24",
       "expiry_year_month": "11/24",
       "card_holder_name": "Jane Smith",
-      "cvv": "456"
+      "cvv": "456",
+      "is_primary": true
     },
     {
       "brand": "American Express",
@@ -27,7 +29,8 @@
       "expiry_year": "26",
       "expiry_year_month": "10/26",
       "card_holder_name": "Alice Johnson",
-      "cvv": "789"
+      "cvv": "789",
+      "is_primary": false
     },
     {
       "brand": "Discover",
@@ -37,7 +40,8 @@
       "expiry_year": "29",
       "expiry_year_month": "09/29",
       "card_holder_name": "Bob Brown",
-      "cvv": "012"
+      "cvv": "012",
+      "is_primary": false
     },
     {
       "brand": "JCB",
@@ -47,7 +51,8 @@
       "expiry_year": "27",
       "expiry_year_month": "08/27",
       "card_holder_name": "Charlie Davis",
-      "cvv": "345"
+      "cvv": "345",
+      "is_primary": false
     }
   ]
   

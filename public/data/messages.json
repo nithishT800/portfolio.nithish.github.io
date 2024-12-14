@@ -1,0 +1,137 @@
+[
+    {
+      "sender": "Alice",
+      "receiver": "Bob",
+      "time": "2024-10-18T16:54:37Z",
+      "direction": "sent",
+      "message": "Hi Bob, how are you?",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Bob",
+      "receiver": "Alice",
+      "time": "2024-10-18T16:55:02Z",
+      "direction": "received",
+      "message": "I'm good thanks, Alice. How about you?",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Alice",
+      "receiver": "Bob",
+      "time": "2024-10-18T16:56:15Z",
+      "direction": "sent",
+      "message": "I'm doing great! Just finished a project.",
+      "read": false,
+      "delivered": true
+    },
+    {
+      "sender": "Bob",
+      "receiver": "Alice",
+      "time": "2024-10-18T16:57:23Z",
+      "direction": "received",
+      "message": "That's awesome! What were you working on?",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Alice",
+      "receiver": "Bob",
+      "time": "2024-10-18T16:58:31Z",
+      "direction": "sent",
+      "message": "I was building a new website for my client.",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Bob",
+      "receiver": "Alice",
+      "time": "2024-10-18T16:59:47Z",
+      "direction": "received",
+      "message": "Sounds interesting. What's the website about?",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Alice",
+      "receiver": "Bob",
+      "time": "2024-10-18T17:01:08Z",
+      "direction": "sent",
+      "message": "It's an e-commerce website for a local bookstore.",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Bob",
+      "receiver": "Alice",
+      "time": "2024-10-18T17:02:24Z",
+      "direction": "received",
+      "message": "That's cool! I love supporting local businesses.",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Alice",
+      "receiver": "Bob",
+      "time": "2024-10-18T17:03:39Z",
+      "direction": "sent",
+      "message": "I'm glad you do. I'm really excited about this project.",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Bob",
+      "receiver": "Alice",
+      "time": "2024-10-18T17:04:56Z",
+      "direction": "received",
+      "message": "I'm sure it's going to be great. Good luck with it!",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Alice",
+      "receiver": "Bob",
+      "time": "2024-10-18T17:06:12Z",
+      "direction": "sent",
+      "message": "Thanks, Bob! I'm going to need all the luck I can get.",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Bob",
+      "receiver": "Alice",
+      "time": "2024-10-18T17:07:28Z",
+      "direction": "received",
+      "message": "Hey, do you want to grab dinner tonight?",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Alice",
+      "receiver": "Bob",
+      "time": "2024-10-18T17:08:43Z",
+      "direction": "sent",
+      "message": "I'd love to! How about that new Italian place downtown?",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Bob",
+      "receiver": "Alice",
+      "time": "2024-10-18T17:09:59Z",
+      "direction": "received",
+      "message": "Sounds great! I'll meet you there at 7:00 PM.",
+      "read": true,
+      "delivered": true
+    },
+    {
+      "sender": "Alice",
+      "receiver": "Bob",
+      "time": "2024-10-18T17:11:14Z",
+      "direction": "sent",
+      "message": "See you then! Can't wait to catch up.",
+      "read": true,
+      "delivered": true
+    }
+]

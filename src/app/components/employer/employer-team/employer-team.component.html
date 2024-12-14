@@ -1,1 +1,100 @@
-<h1>Teams</h1>
+<div class="mat-display-small">Freelancers</div>
+<!-- <div class="grid">
+    <div class="col-12"><div class="mat-label-large">Favorites</div></div>
+    @for(freelancer of freelancer_list; track freelancer){
+        @if(freelancer.is_favorite){
+            <div class="col-12 md:col-3 freelancer-card-hover">
+                <mat-card appearance="outlined">
+                    <mat-card-content>
+                        <div class="flex gap-2">
+                            <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba2.jpg" class="mb-0">
+                            <div class="flex flex-column">
+                                <div class="text-primary hover:underline cursor-pointer" [matTooltip]="freelancer.name" (click)="showFreelancerProfile(freelancer)">{{freelancer.name | truncate : 15}}</div>
+                                <div class="mat-label-medium">{{freelancer.freelancer_location}}</div>
+                            </div>
+                        </div>  
+                        <div class="like-button">
+                            <button mat-icon-button [ngClass]="{'text-red-500': freelancer.is_favorite, 'text-gray-300' : !freelancer.is_favorite}" (click)="toggleFavorite(freelancer)"><mat-icon>favorite</mat-icon></button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        }
+    }@empty {
+        <div class="mat-body-large text-center">No freelancer found, You can favorite a freelancer by inviting them.</div>
+    }
+</div>
+<div class="grid">
+    <div class="col-12"><div class="mat-label-large">Non Favorites</div></div>
+    @for(freelancer of freelancer_list; track freelancer){
+        @if(!freelancer.is_favorite){
+            <div class="col-12 md:col-3 freelancer-card-hover">
+                <mat-card appearance="outlined">
+                    <mat-card-content>
+                        <div class="flex gap-2">
+                            <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba2.jpg" class="mb-0">
+                            <div class="flex flex-column">
+                                <div class="text-primary hover:underline cursor-pointer" [matTooltip]="freelancer.name" (click)="showFreelancerProfile(freelancer)">{{freelancer.name | truncate : 15}}</div>
+                                <div class="mat-label-medium">{{freelancer.freelancer_location}}</div>
+                            </div>
+                        </div>  
+                        <div class="like-button">
+                            <button mat-icon-button [ngClass]="{'text-red-500': freelancer.is_favorite, 'text-gray-300' : !freelancer.is_favorite}" (click)="toggleFavorite(freelancer)"><mat-icon>favorite</mat-icon></button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        }
+    }
+</div> -->
+
+<div class="grid">
+    <div class="col-12"><div class="mat-label-large">Favorites</div></div>
+    @for(freelancer of favorite_freelancer_list; track freelancer){
+        @if(freelancer.is_favorite){
+            <div class="col-12 md:col-3 freelancer-card-hover">
+                <mat-card appearance="outlined">
+                    <mat-card-content>
+                        <div class="flex gap-2">
+                            <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba2.jpg" class="mb-0">
+                            <div class="flex flex-column">
+                                <div class="text-blue-500 hover:underline cursor-pointer" [matTooltip]="freelancer.name" (click)="showFreelancerProfile(freelancer)">{{freelancer.name | truncate : 15}}</div>
+                                <div class="mat-label-medium">{{freelancer.freelancer_location}}</div>
+                            </div>
+                        </div>  
+                        <div class="like-button">
+                            <button mat-icon-button [ngClass]="{'text-red-500': freelancer.is_favorite, 'text-gray-300' : !freelancer.is_favorite}" (click)="toggleFavorite(freelancer)"><mat-icon>favorite</mat-icon></button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        }
+    }@empty {
+        <div class="mat-body-large flex justify-content-center w-full">No freelancer found, You can favorite a freelancer by inviting them.</div>
+    }
+</div>
+@if(non_favorite_freelancer_list.length > 0){
+    <div class="grid">
+        <div class="col-12"><div class="mat-label-large">Non Favorites</div></div>
+        @for(freelancer of non_favorite_freelancer_list; track freelancer){
+            @if(!freelancer.is_favorite){
+                <div class="col-12 md:col-3 freelancer-card-hover">
+                    <mat-card appearance="outlined">
+                        <mat-card-content>
+                            <div class="flex gap-2">
+                                <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba2.jpg" class="mb-0">
+                                <div class="flex flex-column">
+                                    <div class="text-blue-500 hover:underline cursor-pointer" [matTooltip]="freelancer.name" (click)="showFreelancerProfile(freelancer)">{{freelancer.name | truncate : 15}}</div>
+                                    <div class="mat-label-medium">{{freelancer.freelancer_location}}</div>
+                                </div>
+                            </div>  
+                            <div class="like-button">
+                                <button mat-icon-button [ngClass]="{'text-red-500': freelancer.is_favorite, 'text-gray-300' : !freelancer.is_favorite}" (click)="toggleFavorite(freelancer)"><mat-icon>favorite</mat-icon></button>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            }
+        }
+    </div>
+}
